@@ -1,0 +1,28 @@
+packages
+	built-in packages
+	user-defined packages- javac -d "path" srccode.java
+built-in packages:
+	java.util.*;
+	java.io.*;
+default packages used
+	
+import java.util.Scanner;
+//by dfault - use java.lang.String; done by compiler
+//this is the one and only package imported by compiler by default
+class Sample{
+	public static void main(String arg[])
+	{
+		Scanner scan=new Scanner(System.in);
+	}
+}
+#include <stdio.h>
+void main(){
+	printf("hi...");
+}
+6:30
+package com.niit;
+import java.io.BufferedReader;
+class A{
+BufferedReader br=null;
+}
+class B{}

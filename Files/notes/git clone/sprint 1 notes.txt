@@ -1,0 +1,264 @@
+An algorithm is a set of instructions for solving a problem 
+
+Algorithms are in everything we do.
+
+In mathematics and computer science, an algorithm usually means a small procedure that solves a recurrent problem.
+
+Computer algorithms work via input and output. They take the input and apply each step of the algorithm to that information to generate an output.
+
+for ex: A search engine algorithm, for example, takes search strings of keywords and operators as input, 
+	searches its associated database for relevant web pages, and returns results.
+
+An encryption algorithm transforms data according to specified actions to protect it
+
+ word algorithm derives from the name of the mathematician, Mohammed ibn-Musa al-Khwarizmi
+
+how to prepare a cake?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Preheat the oven
+Gather the ingredients
+Measure out the ingredients
+Mix together the ingredients to make the batter
+Grease a pan
+Pour the batter into the pan
+Put the pan in the oven
+Set a timer
+When the timer goes off, take the pan out of the oven
+Enjoy!
+
+ For example, our algorithm for a child's morning routine could be the following:
+
+Wake up and turn off alarm
+Get dressed
+Brush teeth
+Eat breakfast
+Go to school
+
+types:
+=======
+Divide and conquer algorithms 
+Greedy algorithms 
+Recursive algorithms
+Brute force algorithms 
+
+https://junilearning.com/blog/guide/what-are-algorithms/
+
+Algorithmic thinking allows students to break down problems and conceptualize solutions in terms of discrete steps. Being able
+to understand and implement an algorithm requires students to practice structured thinking and reasoning abilities..
+
+
+Qualities of Good Algorithms:
+================================
+Input and output should be defined clearly.
+Each steps should be clear and correct.
+Algorithms should be most effective among many different ways to solve a problem.
+An algorithm shouldn't include computer code. 
+Instead, it should be written in such a way that it can be used in different programming languages.
+
+
+1. Add two numbers entered by the user
+
+Step 1: Start
+Step 2: Declare variables num1, num2 and sum. 
+Step 3: Read values num1 and num2. 
+Step 4: Add num1 and num2 and assign the result to sum.
+        sum←num1+num2 
+Step 5: Display sum 
+Step 6: Stop
+
+2. Find the largest number among three numbers
+
+Step 1: Start
+Step 2: Declare variables a,b and c.
+Step 3: Read variables a,b and c.
+Step 4: If a > b
+           If a > c
+              Display a is the largest number.
+           Else
+              Display c is the largest number.
+        Else
+           If b > c
+              Display b is the largest number.
+           Else
+              Display c is the greatest number.  
+Step 5: Stop
+
+3. Find the factorial of a number
+
+Step 1: Start
+Step 2: Declare variables n, factorial and i.
+Step 3: Initialize variables
+          factorial ← 1
+          i ← 1
+Step 4: Read value of n
+Step 5: Repeat the steps until i = n
+     5.1: factorial ← factorial*i
+     5.2: i ← i+1
+Step 6: Display factorial
+Step 7: Stop
+
+4. Check whether a number is prime or not
+
+Flowcharts:
+============
+
+Flowcharts are used in analyzing, designing, documenting or managing a process or program in various fields. 
+This diagrammatic representation illustrates a solution to a given problem.
+
+https://warren2lynch.medium.com/a-comprehensive-guide-for-flowchart-over-50-examples-785d6dfdc380
+
+things to avoid in Flowchart
+
+Pseudocode:
+============
+
+Pseudocode is a simple way of writing programming code in English
+
+not actual programming language
+
+Common psuedocode verbs:
+
+Input: READ, OBTAIN, GET
+Output: PRINT, DISPLAY, SHOW
+Compute: COMPUTE, CALCULATE, DETERMINE
+Initialize: SET, INIT
+Add one: INCREMENT, BUMP
+
+
+Once you know what the program is about and how it will function, then you can use pseudocode to create statements to achieve the required results for your program.
+
+For ex:
+
+Start Program
+Enter two numbers, A, B
+Add the numbers together
+Print Sum
+End Program
+
+compute the area of a rectangle:
+
+Get the length, l, and width, w
+Compute the area = l*w
+Display the area
+
+TO FIND THE LARGEST OF TWO NUMBERS:
+
+BEGIN
+ 
+  NUMERIC nNum1,nNum2
+  DISPLAY "ENTER THE FIRST NUMBER : "
+  INPUT nNum1
+ 
+  DISPLAY "ENTER THE SECOND NUMBER : "
+  INPUT nNum2
+ 
+  IF nNum1 > nNum2
+    DISPLAY nNum1 + " is larger than "+ nNum2
+  ELSE
+   DISPLAY nNum2 + " is larger than " + nNum1
+ 
+END
+
+TO FIND THE SUM OF TWO NUMBERS
+===============================
+begin
+    numeric nNum1,nNum2,nSum
+    display "ENTER THE FIRST NUMBER : "
+    accept nNum1
+    display "ENTER THE SECOND NUMBER : "
+    accept nNum2
+    compute nSum=nNum1+nNum2
+    display "SUM OF THESE NUMBER : " nSum
+end
+
+WRITE A PSEUDOCODE TO FIND THE AREA OF RECTANGLE:
+===================================================
+
+begin 
+    numeric nLen,nBrd,nAre
+    display "ENTER THE LENGTH OF RECTANGLE : "
+    accept nLen
+    display "ENTER THE BREADTH OF RECTANGLE : "
+    accept nBrd
+    nAre=nLen*nBrd
+    display "AREA OF RECTANGLE : " nAre
+end
+
+FIND THE GREATEST OF THREE NUMBERS:
+======================================
+https://www.code4example.com/pseudocode/pseudocode-examples/
+
+begin 
+    numeric nNum1, nNum2, nNum3
+    display "ENTER THE FIRST NUMBER : "
+    accept nNum1
+    display "ENTER THE SECOND NUMBER : "
+    accept nNum2
+    display "ENTER THE THIRD NUMBER : "
+    accept nNum3
+    Num=nNum1
+    if(Num<nNum2)
+    begin
+        Num=nNum2
+    end
+    if(Num<nNum3)
+    begin
+        Num=nNum3
+    end
+    display "GREATEST ONE : " Num
+end
+
+WRITE A PSEUDOCODE TO DISPLAY THE STUDENT NAME ACCORDING TO THEIR ROLL NO.
+
+
+begin
+    numeric nRoll
+    display "ENTER STUDENT ROLL : "
+    accept nRoll
+    switch(nRoll)
+    begin
+        case 1 : display "ANKIT"
+            break;
+        case 2 : display "RAHUL"
+            break;
+        case 3 : display "AMIT"
+            break;
+        case 4 : display "GAURAV"
+            break;
+        case 5 : display "NITESH"
+            break;
+        case 6 : display "VISHAL"
+            break;
+        case 7 : display "CHITRANJAN"
+            break;
+        case 8 : display "KAUSHAL"
+            break;
+        case 9 : display "DHIRENDRA"
+            break;
+        default : display "OUT OF RANGE"
+    end
+end
+
+https://computersciencewiki.org/index.php/Pseudocode
+https://www.brainkart.com/article/Pseudo-code_35895/
+
+

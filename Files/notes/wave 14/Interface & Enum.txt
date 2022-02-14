@@ -1,0 +1,391 @@
+Monish--9:04
+Jayasree--9:04
+Prasanth--9:04
+Azad--9:04
+Manikanth-9:05
+Saurabh--9:08
+Joel---9:12
+Prathmesh--9:16
+Ripu--9:24
+Rejo--9:26
+
+
+
+
+
+
+
+Inheritance:::
+Derive new class from existing class
+extends keyword
+
+Constructor:::
+block of code similar to methods which has same name as classname used 
+to initialize class variables
+
+
+Initialize object in java::new keyword
+class A
+{}
+
+A obj=new A(); //init
+
+int no;
+no=100;//init
+this.no=no;//init
+
+
+
+
+Parameterized Constructor:::
+values can be initialized to class variables  only through para cons
+
+class Engine
+{
+int speed,maxrpm;
+Engine(int speed,int maxrpm)
+{
+this.speed=speed;
+this.maxrpm=maxrpm;
+}
+}
+
+Access Specifiers:::
+Accessibilty for class members
+
+Accessibilty------members can be accessed outside the class--
+other classes(function)
+
+
+
+Overloading::multiple functions with same name in same class with diff 
+parameters list
+
+
+
+Overidding::
+same method in parent and child class, child class method will override 
+parent method is called method overdding
+
+
+Abstract class::
+defined with abstract keyword contains regular concrete methods
+and abstract methods
+----no object
+
+
+Abstract method:::
+defined with abstract keyword , it will be inside abstract class,
+it will not have body(define), it has to be define in child class
+(override in child class)
+
+Interface:::
+
+Similarites between Abstract class and Interface::
+1.Both needs inheritance and Dynamic poly
+2.Both works based on method overridding
+3.Both will not accept private method and final method
+4.Both we cannt create an object
+5.Both will act like parent functionalities(
+
+
+
+Game COnsole:::
+Abstract----->Games
+
+abstract class Games
+{}
+class Basketball extends Games
+{}
+class Football extends Games
+{}
+class VolleyBall extends Games
+{}
+class MainProgram
+{}
+------------------------------OR-------------------------------
+abstract class Games{}
+abstract class OutdoorGames extends Games
+{}
+class Basketball extends OutdoorGames
+{}
+class Football extends OutdoorGames
+{}
+class VolleyBall extends OutdoorGames
+{}
+class MainProgram
+{}
+
+
+Interface:::Pure Abstract class--contains only abstract methods
+and contains final variable(constant)
+
+interface Sports
+{
+int noofplayers=11;
+void playgame();
+void dispscore();
+}
+
+//EQUIVALENT TO
+
+interface Sports
+{
+public static final int noofplayers=11;
+public abstract void playgame();
+public abstract void dispscore();
+}
+
+
+Abstract class---extends---Single Inheritance
+
+Interface----implements-----Multiple Inheritance
+
+
+class X{}
+class Y{}
+class Z extends X,Y     //ERROR----no---multiple inheritance
+{}
+
+
+interface i{}
+interface j{}
+class x implements i,j  //valid
+{}
+interface y extends i,j   //valid
+{}
+
+-----------------------------------------
+
+interface Sports{}
+interface Games{}
+abstract class IndoorGame{}
+
+class chess extends IndoorGame implements Sports,Games
+{
+}
+
+
+
+
+
+-------------------Drawbacks of Multiple Inheritance-----------------------
+class base1
+{
+void fun1(){}
+}
+class base2
+{
+void fun1(){}
+}
+class derived extends base1,base2{}    //Java doesnot support Multiple Inheritance
+
+derivedobj.fun1();  //ambuguity
+derivedobj.fun1();  //ambuguity
+
+
+
+
+
+
+
+
+
+Abstract class
+
+
+Interface
+
+
+Similarites between Abstract class and Interface::
+
+
+Difference between Abstract class and Interface::
+
+
+
+
+
+
+
+
+
+
+
+we cannot create object for abstract class & interface
+
+
+
+
+
+
+
+interface Electronics
+
+class Mobile implements Electronics
+class TV implements Electronics
+class Computer implements Electronics
+
+
+class SmartPhone extends Mobile
+class Landline extends Mobile
+class LED extends TV
+class LCD extends TV
+class Desktop extends Computer
+class Laptop extends Computer
+
+
+Laptop Dell=new Laptop();
+
+--------------------------------------------------------------------------------
+Electronics Interface-----COmputer class-----Desktop/Laptop class----Objects
+
+
+Computer--LAP/DESK----OS------>Windows/IOS/Ubuntu/Linux----ENUM
+
+laptop with ABC OS--not allowed
+laptop with UBUNTUXYZ OS--not allowed
+
+
+
+Car-----Engine---->Petrol/Diesal/CNG/Electric(ENUM type)
+
+
+Car------Engine-->XYZ
+
+
+
+
+
+
+
+Concept Demo::::
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+enum OS
+{
+Windows,IOS,Ubuntu,Linux
+}
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+interface Electronics
+{
+  int voltage=3500;  //public static final
+  int current=13;
+  void display();   // public abstract
+  void audio();
+}
+
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+class Computer implements Electronics
+{
+String modelname;
+int price;
+OS ostype;
+Computer(OS ostype,String modelname,int price)  // Parameterised Constructor
+{
+  	this.ostype=ostype;
+    	this.modelname=modelname;
+    	this.price=price;
+}
+  public void display()
+  {
+ System.out.println("inside DISPLAY method of computer class");
+  System.out.println("Voltage req---"+voltage+"---CUrrent req--"+current);
+ System.out.println("Operating System---"+ostype+"---Model Name---"+modelname+"---Price---"+price);
+  }
+  public void audio()
+  {
+ System.out.println("inside AUDIO method of computer class");
+  }
+}
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+class Desktop extends Computer
+{
+    private int monitorsize;
+Desktop(OS ostype,String modelname,int price,int monitorsize)
+{
+super(ostype,modelname,price);
+this.monitorsize=monitorsize;
+}
+public void display()
+{
+    super.display();
+    System.out.println("Desktop Monitor Size---"+monitorsize);
+    System.out.println("-------------------------------------------------------");
+}
+}
+
+
+
+
+
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+class Laptop extends Computer
+{
+    private int batterpower;
+    private int screensize;
+Laptop(OS ostype,String modelname,int price,int batterpower,int screensize)
+{
+super(ostype,modelname,price);
+this.batterpower=batterpower;
+this.screensize=screensize;
+}
+public void display()
+{
+    super.display();
+     System.out.println("Laptop Batter Power---"+batterpower);
+    System.out.println("Laptop Screen Size---"+screensize);
+     System.out.println("-------------------------------------------------------");
+}
+}
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+class HelloWorld 
+{
+  public static void main(String[] args) 
+    {
+        Laptop obj1=new Laptop(OS.Windows, "Dell Precision Laptop",125000,10000,15);
+        Laptop obj2=new Laptop(OS.Linux,"Acer Laptop",55000,20000,14);
+        Desktop obj3=new Desktop(OS.Windows,"HP Machine",35000,20);
+        Desktop obj4=new Desktop(OS.Ubuntu, "Samsung Machine",40000,30);
+        obj1.display();
+        obj2.display();
+        obj3.display();
+        obj4.display();
+        obj1.audio();obj2.audio();obj3.audio();obj4.audio();
+    }
+}
+
+
+

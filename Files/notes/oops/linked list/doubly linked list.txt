@@ -1,0 +1,194 @@
+Employee.java
+==============
+public class Employee {
+	int employeeId;
+	String employeeName;
+	int salary;
+	String address;
+	
+	public String toString()
+	{
+		return "Employee ID:"+employeeId+" Employee Name:"+employeeName+" Salary:"+salary+" Address"+address;
+	}
+
+	public int getEmployeeId() {
+		return employeeId;
+	}
+
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
+	}
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public Employee() {
+	}
+
+	public Employee(int employeeId, String employeeName, int salary, String address) {
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.salary = salary;
+		this.address = address;
+	}
+
+}
+
+DoubleLinkedNode.java
+=====================
+
+public class DoubleLinkedNode 
+{
+	//data part
+	private Employee employeeData;
+	
+	//Self Reference Part
+	DoubleLinkedNode prev,next;
+	
+	public DoubleLinkedNode() {}
+	
+	public DoubleLinkedNode(Employee employeeObj)
+	{
+		this.employeeData=employeeObj;
+		prev=next=null;
+	}
+
+	public Employee getEmployeeData() {
+		return employeeData;
+	}
+
+	public void setEmployeeData(Employee employeeData) {
+		this.employeeData = employeeData;
+	}	
+}
+
+DoubleLinkedList.java
+===================
+
+public class DoubleLinkedList 
+{
+	DoubleLinkedNode first,last;
+	
+	public DoubleLinkedList()
+	{
+		first=last=null;
+	}
+	
+	public void insertEmployee(Employee obj)
+	{
+		DoubleLinkedNode newNode=new DoubleLinkedNode(obj);
+		
+		if(first==null)
+		{
+			first=last=newNode;
+		}
+		else
+		{
+			DoubleLinkedNode temp;
+			temp=first;
+			while(temp.next!=null)
+			{
+				temp=temp.next;
+			}
+			temp.next=newNode;
+			newNode.prev=temp;
+			last=newNode;
+		}
+	}
+	
+	public void displayNamesStartWithV()
+	{
+		
+	}
+	
+	public void searchEmployeeByName(String employeeName)
+	{
+		
+	}
+	
+	public void deleteEmployeeByName(String employeeName)
+	{
+		
+	}
+	
+	public void displayAllEmployeesResideInCity(String address)
+	{
+		
+	}
+	
+	public void updateEmployeeDetailBasedOnEmployeeId(int employeeId,Employee newObjInfo)
+	{
+		
+	}
+	
+	public void forwardTraversal()
+	{
+		for(DoubleLinkedNode temp=first;temp!=null;temp=temp.next)
+		{
+			System.out.println(temp.getEmployeeData());
+		}
+	}
+	public void backwardTraversal()
+	{
+		for(DoubleLinkedNode temp=last;temp!=null;temp=temp.prev)
+		{
+			System.out.println(temp.getEmployeeData());
+		}
+	}
+}
+
+DoubleLinkedListImpl.java
+========================
+import java.io.BufferedReader;
+import java.io.FileReader;
+
+public class DoubleLinkedListImpl 
+{
+	public static void main(String arg[])
+	{
+		
+		DoubleLinkedList obj=new DoubleLinkedList();
+		
+		try
+		{
+		BufferedReader bReader=new BufferedReader(new FileReader("C:\\WAVE-15\\Employee.txt"));
+		String employeeRecord;
+			while((employeeRecord=bReader.readLine())!=null)
+			{
+				String empDetails[]=employeeRecord.split(",");
+				Employee employeeObj=new Employee(Integer.parseInt(empDetails[0]),empDetails[1],Integer.parseInt(empDetails[2]),empDetails[3]);
+				obj.insertEmployee(employeeObj);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("Exception Raised:"+e);
+		}
+		
+		obj.forwardTraversal();
+		
+		obj.backwardTraversal();
+		
+	}
+}

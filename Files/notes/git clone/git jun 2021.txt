@@ -1,0 +1,569 @@
+
+C:\Users\kathi>git version
+git version 2.31.1.windows.1
+
+C:\Users\kathi>cd C:\New folder\git_demo\SeleniumDemo1
+
+C:\New folder\git_demo\SeleniumDemo1>git init
+Initialized empty Git repository in C:/New folder/git_demo/SeleniumDemo1/.git/
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .classpath
+        .project
+        .settings/
+        data.xlsx
+        pom.xml
+        src/
+        target/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\SeleniumDemo1>git add .
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .classpath
+        new file:   .project
+        new file:   .settings/org.eclipse.core.resources.prefs
+        new file:   .settings/org.eclipse.jdt.core.prefs
+        new file:   .settings/org.eclipse.m2e.core.prefs
+        new file:   data.xlsx
+        new file:   pom.xml
+        new file:   src/main/java/com/atos/SeleniumDemo1/App.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+        new file:   src/test/java/com/atos/SeleniumDemo1/AppTest.java
+        new file:   target/classes/META-INF/MANIFEST.MF
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+        new file:   target/classes/com/atos/SeleniumDemo1/App.class
+        new file:   target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+        new file:   target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+        new file:   target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>
+C:\New folder\git_demo\SeleniumDemo1>git rm --cached data.xlsx
+rm 'data.xlsx'
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .classpath
+        new file:   .project
+        new file:   .settings/org.eclipse.core.resources.prefs
+        new file:   .settings/org.eclipse.jdt.core.prefs
+        new file:   .settings/org.eclipse.m2e.core.prefs
+        new file:   pom.xml
+        new file:   src/main/java/com/atos/SeleniumDemo1/App.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+        new file:   src/test/java/com/atos/SeleniumDemo1/AppTest.java
+        new file:   target/classes/META-INF/MANIFEST.MF
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+        new file:   target/classes/com/atos/SeleniumDemo1/App.class
+        new file:   target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+        new file:   target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+        new file:   target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .classpath
+        new file:   .project
+        new file:   .settings/org.eclipse.core.resources.prefs
+        new file:   .settings/org.eclipse.jdt.core.prefs
+        new file:   .settings/org.eclipse.m2e.core.prefs
+        new file:   pom.xml
+        new file:   src/main/java/com/atos/SeleniumDemo1/App.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+        new file:   src/test/java/com/atos/SeleniumDemo1/AppTest.java
+        new file:   target/classes/META-INF/MANIFEST.MF
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+        new file:   target/classes/com/atos/SeleniumDemo1/App.class
+        new file:   target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+        new file:   target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+        new file:   target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/com/atos/SeleniumDemo1/App.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+
+C:\New folder\git_demo\SeleniumDemo1>git restore App.java
+error: pathspec 'App.java' did not match any file(s) known to git
+
+C:\New folder\git_demo\SeleniumDemo1>git restore src/main/java/com/atos/SeleniumDemo1/App.java
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .classpath
+        new file:   .project
+        new file:   .settings/org.eclipse.core.resources.prefs
+        new file:   .settings/org.eclipse.jdt.core.prefs
+        new file:   .settings/org.eclipse.m2e.core.prefs
+        new file:   pom.xml
+        new file:   src/main/java/com/atos/SeleniumDemo1/App.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+        new file:   src/test/java/com/atos/SeleniumDemo1/AppTest.java
+        new file:   target/classes/META-INF/MANIFEST.MF
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+        new file:   target/classes/com/atos/SeleniumDemo1/App.class
+        new file:   target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+        new file:   target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+        new file:   target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   .classpath
+        new file:   .project
+        new file:   .settings/org.eclipse.core.resources.prefs
+        new file:   .settings/org.eclipse.jdt.core.prefs
+        new file:   .settings/org.eclipse.m2e.core.prefs
+        new file:   pom.xml
+        new file:   src/main/java/com/atos/SeleniumDemo1/App.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+        new file:   src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+        new file:   src/test/java/com/atos/SeleniumDemo1/AppTest.java
+        new file:   target/classes/META-INF/MANIFEST.MF
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+        new file:   target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+        new file:   target/classes/com/atos/SeleniumDemo1/App.class
+        new file:   target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+        new file:   target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+        new file:   target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+        new file:   target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/com/atos/SeleniumDemo1/App.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+
+C:\New folder\git_demo\SeleniumDemo1>git commit -m "first commit with app.java modified and not updated"
+[master (root-commit) 1fa16a9] first commit with app.java modified and not updated
+ 20 files changed, 483 insertions(+)
+ create mode 100644 .classpath
+ create mode 100644 .project
+ create mode 100644 .settings/org.eclipse.core.resources.prefs
+ create mode 100644 .settings/org.eclipse.jdt.core.prefs
+ create mode 100644 .settings/org.eclipse.m2e.core.prefs
+ create mode 100644 pom.xml
+ create mode 100644 src/main/java/com/atos/SeleniumDemo1/App.java
+ create mode 100644 src/main/java/com/atos/SeleniumDemo1/AttendanceMarker.java
+ create mode 100644 src/main/java/com/atos/SeleniumDemo1/SeleniumBasic.java
+ create mode 100644 src/main/java/com/atos/SeleniumDemo1/WindowHandle.java
+ create mode 100644 src/test/java/com/atos/SeleniumDemo1/AppTest.java
+ create mode 100644 target/classes/META-INF/MANIFEST.MF
+ create mode 100644 target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.properties
+ create mode 100644 target/classes/META-INF/maven/com.atos/SeleniumDemo1/pom.xml
+ create mode 100644 target/classes/com/atos/SeleniumDemo1/App.class
+ create mode 100644 target/classes/com/atos/SeleniumDemo1/AttendanceMarker.class
+ create mode 100644 target/classes/com/atos/SeleniumDemo1/SeleniumBasic.class
+ create mode 100644 target/classes/com/atos/SeleniumDemo1/WindowHandle$1.class
+ create mode 100644 target/classes/com/atos/SeleniumDemo1/WindowHandle.class
+ create mode 100644 target/test-classes/com/atos/SeleniumDemo1/AppTest.class
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   src/main/java/com/atos/SeleniumDemo1/App.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\New folder\git_demo\SeleniumDemo1>git add src/main/java/com/atos/SeleniumDemo1/App.java
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   src/main/java/com/atos/SeleniumDemo1/App.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+
+C:\New folder\git_demo\SeleniumDemo1>git commit -m "updated app.java with changes in stage and committing"
+[master ad2f839] updated app.java with changes in stage and committing
+ 1 file changed, 2 insertions(+)
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\SeleniumDemo1>git log
+commit ad2f8390d9195c20f2c4ac493bca8b3a39eb6bce (HEAD -> master)
+Author: K <natararajan1959@gmail.com>
+Date:   Thu Jun 10 10:54:32 2021 +0530
+
+    updated app.java with changes in stage and committing
+
+commit 1fa16a98951ab2e83cd7039d98f4bdd4bb63b545
+Author: K <natararajan1959@gmail.com>
+Date:   Thu Jun 10 10:53:19 2021 +0530
+
+    first commit with app.java modified and not updated
+
+C:\New folder\git_demo\SeleniumDemo1>git reflog
+ad2f839 (HEAD -> master) HEAD@{0}: commit: updated app.java with changes in stage and committing
+1fa16a9 HEAD@{1}: commit (initial): first commit with app.java modified and not updated
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data.xlsx
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\SeleniumDemo1>git add .
+
+C:\New folder\git_demo\SeleniumDemo1>git commit -m "xcel is added"
+[master a51e6ad] xcel is added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 data.xlsx
+
+C:\New folder\git_demo\SeleniumDemo1>git status
+On branch master
+nothing to commit, working tree clean
+
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\kathi>cd C:\New folder\git_demo\git_check
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        b.txt
+
+
+C:\New folder\git_demo\git_check>git add b.txt
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   b.txt
+
+
+
+
+TASK FOR THE DAY:
+=====================================================================================================================
+
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   b.txt
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    a.txt
+        deleted:    b.txt
+
+
+C:\New folder\git_demo\git_check>git commit -m "del and added thru git"
+[master (root-commit) c5c771f] del and added thru git
+ 2 files changed, 2 insertions(+)
+ create mode 100644 a.txt
+ create mode 100644 b.txt
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    a.txt
+        deleted:    b.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\New folder\git_demo\git_check>git add .
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    a.txt
+        deleted:    b.txt
+
+
+C:\New folder\git_demo\git_check>git commit -m "file delete hist"
+[master 95bbacb] file delete hist
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 a.txt
+ delete mode 100644 b.txt
+
+C:\New folder\git_demo\git_check>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\New folder\git_demo\git_check>git log
+commit 95bbacb902b9dd7af99cf8215dbcb8bbd45497ff (HEAD -> master)
+Author: K <natararajan1959@gmail.com>
+Date:   Thu Jun 10 11:13:31 2021 +0530
+
+    file delete hist
+
+commit c5c771f549c50d2d62d1ccfc7cce916d8b195f49
+Author: K <natararajan1959@gmail.com>
+Date:   Thu Jun 10 11:12:24 2021 +0530
+
+    del and added thru git
+
+======================================================================================================================
+
+C:\New folder\git_demo\git_check>cd..
+
+C:\New folder\git_demo>cd git_basic
+
+C:\New folder\git_demo\git_basic>git init
+Initialized empty Git repository in C:/New folder/git_demo/git_basic/.git/
+
+C:\New folder\git_demo\git_basic>git add *.txt
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   f1.txt
+        new file:   f2.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.java
+        b.java
+        sub/
+
+
+C:\New folder\git_demo\git_basic>git commit -m "first"
+[master (root-commit) 6d60b56] first
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 f1.txt
+ create mode 100644 f2.txt
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.java
+        b.java
+        sub/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.java
+        b.java
+        sub/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\git_basic>git add *.java
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   a.java
+        new file:   b.java
+        new file:   sub/c.java
+        new file:   sub/d.java
+
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   a.java
+        new file:   b.java
+        new file:   sub/c.java
+        new file:   sub/d.java
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.java
+
+
+C:\New folder\git_demo\git_basic>git commit -m "committed without changes in a.java"
+[master 87b6b57] committed without changes in a.java
+ 4 files changed, 1 insertion(+)
+ create mode 100644 a.java
+ create mode 100644 b.java
+ create mode 100644 sub/c.java
+ create mode 100644 sub/d.java
+
+C:\New folder\git_demo\git_basic>git add a.java
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   a.java
+
+
+C:\New folder\git_demo\git_basic>git commit -m "updating a.java "
+[master fc2c257] updating a.java
+ 1 file changed, 1 insertion(+)
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\New folder\git_demo\git_basic>git diff
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        c.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\New folder\git_demo\git_basic>git add c.txt
+
+C:\New folder\git_demo\git_basic>git commit -m "c"
+[master add95cc] c
+ 1 file changed, 1 insertion(+)
+ create mode 100644 c.txt
+
+C:\New folder\git_demo\git_basic>git diff
+diff --git a/c.txt b/c.txt
+index fabfbb2..03c53bc 100644
+--- a/c.txt
++++ b/c.txt
+@@ -1 +1,2 @@
+-hi hello
+\ No newline at end of file
++hi ray,
++welocme
+\ No newline at end of file
+
+C:\New folder\git_demo\git_basic>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   c.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\New folder\git_demo\git_basic>git restore c.txt
+
+C:\New folder\git_demo\git_basic>git diff
+
+C:\New folder\git_demo\git_basic>

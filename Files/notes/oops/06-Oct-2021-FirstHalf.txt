@@ -1,0 +1,287 @@
+These are called as four paradigm of the object oriented programming.
+
+1.Abstraction
+===========
+	- It is a process of hiding the data which are not necessary for the user and basically using this we are hiding the complexity detail from the user.
+
+2.Encapsulation
+=============
+	- It is implementing the abstraction. It means how to hide the complexity from the user will be defined by the encapsulation.
+
+	- Example - Capsule 
+	- Example - TV Case
+
+	- It is wraping of the data member and the code member which act upon the data into a single unit.  In any object oriented programming class is the basis for encapsulation.
+
+3. Polymorphism
+===============
+	- It is an ability of an object to exhibit different features or behaviours.
+
+	- Polymophism is implemented using the method overloading and method overriding.
+
+4. Inheritance
+==============
+	- Acquiring the features and properties from the parent to the child is called inheritance.
+
+	- In object oriented programming we implement inheritance to create a new class using the existing class features (properties and behaviours).
+
+Why user defined Data Types?
+===========================
+	- Existing data types are not suitable to store the real data. To store the real data we need to create our own defined data type. So in java we have provision to create our own defined data type using class. Here the real data like Employee , Student , Customer , Transaction , Loan , Book , Author , Batch , Salary, Box , Shape  etc.
+
+Functions | Methods in  Class
+===========================
+- There are two purpose why a method will be there in a particular class in java.
+
+
+public class Box 
+{
+	double width;
+	double height;
+	double depth;
+}
+public class BoxMain 
+{
+	public static void main(String arg[])
+	{
+		//Creation of the Object
+		Box boxObj=new Box();
+		
+		//Initializing the values of the Object
+		boxObj.width=10;
+		boxObj.height=15;
+		boxObj.depth=20;
+		
+		//Manipulating the Object members
+		double volume;
+		volume=boxObj.width*boxObj.height*boxObj.depth;
+		
+		//displaying volume
+		System.out.println("Volume of the Box:"+volume);
+		
+		
+	}
+}
+
+- The above code where we are trying to create an object of the Box class and then we are able to initialize them and manipulate with the object members and finding the volume and displaying that also.
+
+1. Giving the public interface to the private data members.
+
+public class Box {
+	double width;
+	double height;
+	double depth;
+}
+public class BoxMain 
+{
+	public static void main(String arg[])
+	{
+		//Creation of the Object
+		Box boxObj=new Box();
+		
+		//Initializing the values of the Object
+		boxObj.width=-10;
+		boxObj.height=15;
+		boxObj.depth=20;
+		
+		//Manipulating the Object members
+		double volume;
+		volume=boxObj.width*boxObj.height*boxObj.depth;
+		
+		//displaying volume
+		System.out.println("Volume of the Box:"+volume);
+		
+		
+	}
+}
+
+- So here in the above we are trying to initialize the width member as -10. By doing so the value is mathematically correct but in a real world there will not have any box which is having -10 as width. So as real world scenario the program fail.
+
+- So here the box class has to take steps to restrict the negative values from any user who is using this Box class.
+
+public class Box {
+	private double width;
+	private double height;
+	private double depth;
+}
+
+- Now the Box class decided make the members and private so that other users of this class can't access these members.
+
+- But by doing we are making our class none of use.
+
+- So here we need to make the member to be accessible to other class with specific validation so that the data will not have any irrelevant data or mailicious data.
+
+- In this scenario we need to use the getter (accessor) and setter(mutator) method.
+
+Getter Method 	: This method will be used for accessing the private variable in another class.
+===================================================================================
+Syntax
+==========
+public returnType getVariableName()
+{
+	return class_scope_member;
+}
+
+public double getWidth()
+{
+	return width;
+}
+
+Setter Method 	: This method is used for changing or mutating the value. Here we can have validation as it is a method.
+=============
+public void setVariableName(dataType variable_name)
+{
+	class_scope_member=variable_name;
+}
+
+public void setWidth(double w)
+{
+	width=(w>0)?w:1;
+}
+
+
+public class Box 
+{
+	private double width;
+	private double height;
+	private double depth;
+	
+	public double getWidth()
+	{
+		return width;
+	}
+
+	public void setWidth(double w)
+	{
+		width=(w>0)?w:1; //Validate
+	}
+	
+	public double getHeight()
+	{
+		return height;
+	}
+
+	public void setHeight(double h)
+	{
+		height=(h>0)?h:1; //Validate
+	}
+	
+	public double getDepth()
+	{
+		return depth;
+	}
+
+	public void setDepth(double d)
+	{
+		depth=(d>0)?d:1; //Validate
+	}
+}
+public class BoxMain 
+{
+	public static void main(String arg[])
+	{
+		//Creation of the Object
+		Box boxObj=new Box();
+		
+		//Initializing the values of the Object
+		boxObj.setWidth(-10);
+		boxObj.setHeight(15);
+		boxObj.setDepth(20);
+		
+		//Manipulating the Object members
+		double volume;
+		volume=boxObj.getWidth()*boxObj.getHeight()*boxObj.getDepth();
+		
+		//displaying volume
+		System.out.println("Volume of the Box:"+volume);
+	}
+}
+
+2. Manipulation with the Object data member
+=========================================
+- Basically here in this method we will try to manipulate with the object's data member.
+
+
+public class Box 
+{
+	private double width;
+	private double height;
+	private double depth;
+	
+	public double getWidth()
+	{
+		return width;
+	}
+
+	public void setWidth(double w)
+	{
+		width=(w>0)?w:1; //Validate
+	}
+	
+	public double getHeight()
+	{
+		return height;
+	}
+
+	public void setHeight(double h)
+	{
+		height=(h>0)?h:1; //Validate
+	}
+	
+	public double getDepth()
+	{
+		return depth;
+	}
+
+	public void setDepth(double d)
+	{
+		depth=(d>0)?d:1; //Validate
+	}
+	//object manipulation method.
+	public double volume()
+	{
+		return width*height*depth;
+	}
+}
+
+
+public class BoxMain 
+{
+	public static void main(String arg[])
+	{
+		//Creation of the Object
+		Box boxObj=new Box();
+		
+		//Initializing the values of the Object
+		boxObj.setWidth(-10);
+		boxObj.setHeight(15);
+		boxObj.setDepth(20);
+		
+		//Manipulating the Object members
+		double volume1;
+		volume1=boxObj.volume();
+		
+		//displaying volume
+		System.out.println("Volume of the Box:"+volume1);
+		
+		
+	}
+}
+
+1.Create a class called Student and write the data member for the class and also you need to specify the getter and setter methods and also the method to display them.
+
+2.Create a class called Author which should contain data members and getter and setter method and displaying the values.
+
+
+
+
+	
+
+
+
+
+
+
+
+
+

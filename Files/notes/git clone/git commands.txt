@@ -1,0 +1,203 @@
+
+C:\Users\kathi>git version
+git version 2.31.1.windows.1
+
+C:\Users\kathi>md my-todo-app
+
+C:\Users\kathi>cd my-todo-app
+
+C:\Users\kathi\my-todo-app>echo hi hello how are you > a.txt
+
+C:\Users\kathi\my-todo-app>echo <h1>hi hello</h1 > index.html
+The system cannot find the file specified.
+
+C:\Users\kathi\my-todo-app>echo "<h1>hi hello</h1>" > index.html
+
+C:\Users\kathi\my-todo-app>git init
+Initialized empty Git repository in C:/Users/kathi/my-todo-app/.git/
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        a.txt
+        index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\kathi\my-todo-app>git add a.txt index.html
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   index.html
+
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   index.html
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+
+
+C:\Users\kathi\my-todo-app>git add a.txt
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   a.txt
+        new file:   index.html
+
+
+C:\Users\kathi\my-todo-app>git commit -m "this is my first commit- tdy date"
+[master (root-commit) fc34302] this is my first commit- tdy date
+ 2 files changed, 4 insertions(+)
+ create mode 100644 a.txt
+ create mode 100644 index.html
+
+C:\Users\kathi\my-todo-app>a.txt
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\kathi\my-todo-app>git restore a.txt
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\kathi\my-todo-app>a.txt
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   a.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\kathi\my-todo-app>git add a.txt
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   a.txt
+
+
+C:\Users\kathi\my-todo-app>git commit -m "changes updated"
+[master 964756f] changes updated
+ 1 file changed, 1 insertion(+)
+
+C:\Users\kathi\my-todo-app>git log
+commit 964756fdea6a40554982b464391526fd21a669d9 (HEAD -> master)
+Author: K <natararajan1959@gmail.com>
+Date:   Wed Sep 15 16:02:19 2021 +0530
+
+    changes updated
+
+commit fc34302203d5f2113546513cac12d38b5a9cee02
+Author: K <natararajan1959@gmail.com>
+Date:   Wed Sep 15 15:57:00 2021 +0530
+
+    this is my first commit- tdy date
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Admin.java
+        Employee.java
+        Manager.java
+        b.txt
+        c.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\kathi\my-todo-app>git add *.java
+
+C:\Users\kathi\my-todo-app>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Admin.java
+        new file:   Employee.java
+        new file:   Manager.java
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        b.txt
+        c.txt
+
+
+C:\Users\kathi\my-todo-app>git add .
+
+C:\Users\kathi\my-todo-app>git commit -m "all files added"
+[master 0366f7d] all files added
+ 5 files changed, 3 insertions(+)
+ create mode 100644 Admin.java
+ create mode 100644 Employee.java
+ create mode 100644 Manager.java
+ create mode 100644 b.txt
+ create mode 100644 c.txt
+
+C:\Users\kathi\my-todo-app>git log
+commit 0366f7d0681d8bfc332e1e6f5aa582226966c2df (HEAD -> master)
+Author: K <natararajan1959@gmail.com>
+Date:   Wed Sep 15 16:09:44 2021 +0530
+
+    all files added
+
+commit 964756fdea6a40554982b464391526fd21a669d9
+Author: K <natararajan1959@gmail.com>
+Date:   Wed Sep 15 16:02:19 2021 +0530
+
+    changes updated
+
+commit fc34302203d5f2113546513cac12d38b5a9cee02
+Author: K <natararajan1959@gmail.com>
+Date:   Wed Sep 15 15:57:00 2021 +0530
+
+    this is my first commit- tdy date
+
+C:\Users\kathi\my-todo-app>

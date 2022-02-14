@@ -1,0 +1,210 @@
+Data Structure
+===============
+- Data structure is a way of arranging the data in a logical fashion.
+
+- It means here the elements which can be a primitive values or objects will be stored in a fashion so that manipulation on that data will be easier.
+
+- We can have various data structure like Array , LinkedList , Stack , Queue , Tree etc.
+
+- Based on the above we can divide these data structure into two major types they are 
+
+	1. Static Data Structure 	2. Dynamic Data Structure
+
+1. Static Data Structure 	: In case of static data structure we don't have provision for shrinking and expanding the size of the data structure.
+
+			: So in this case we are trying to implement a structure which will have fixed size.
+
+			: Example of this type of data structure is array where we can't expand or shrink the array.
+
+
+2. Dynamic Data Structure	: In case of dynamic data structure we have provision for shrinking and expanding at the runtime.
+			
+			: So in this case we are trying to implement a data structure which can grow and shrink.
+
+			: Example of this type : Linked List , Doubly Linked List , Tree , Stack with LinkedList , Queue with LinkedList 
+
+
+Linked List
+===============
+- To create a linked list we need to know to implement the node.
+
+- A node is a single element in the list. It is also called as building block of the list.
+
+- Every node of a single linked list will contain two components 1. Data Part		2.Link Part| Reference Part
+
+- Data Part	: This will contain the data which we want to store in that element can be a primitive value | user defined objects.
+
+- Reference Part	: This is the object reference of a node which can contain the address of the next node.
+
+Node.java
+===========
+public class Node 
+{
+	//data Part
+	private int data;
+	
+	//Reference Part
+	Node link;
+	
+	public Node(int data)
+	{
+		this.data=data;
+		link=null;
+	}
+	
+	public int getData(){
+		return data;
+	}
+}
+
+Static Structure
+===============
+
+public class LinkedListImpl 
+{
+	public static void main(String arg[])
+	{
+		Node START=null;
+		
+		Node element1=new Node(10);
+		START=element1;
+		
+		Node element2=new Node(20);
+		element1.link=element2;
+		
+		Node element3=new Node(30);
+		element2.link=element3;
+		
+				
+		Node element4=new Node(40);
+		element3.link=element4;
+		
+		Node element5=new Node(50);
+		element4.link=element5;
+		
+		System.out.println("Element 1: Data"+element1.getData()+" Link:"+element1.link);
+		System.out.println("Element 2: Data"+element2.getData()+" Link:"+element2.link);
+		System.out.println("Element 3: Data"+element3.getData()+" Link:"+element3.link);
+		System.out.println("Element 4: Data"+element4.getData()+" Link:"+element4.link);
+		System.out.println("Element 5: Data"+element5.getData()+" Link:"+element5.link);
+		
+		for(Node temp=START;temp!=null;temp=temp.link)
+		{
+			System.out.println("Data:"+temp.getData()+"==>");
+		}
+		
+	}
+}
+
+LinkedListImpl
+==================
+import java.util.Scanner;
+
+public class LinkedListImpl 
+{
+	Node START;
+	
+	public LinkedListImpl()
+	{
+		START=null;
+	}
+	
+	public void addNode()
+	{
+		int data;
+		Scanner scannerObj=new Scanner(System.in);
+		System.out.println("\nEnter the Node Value:::");
+		data=scannerObj.nextInt();
+		Node newNode=new Node(data);
+		
+		if(START==null)
+		{
+			START=newNode;
+		}
+		else
+		{
+			Node temp;
+			temp=START;
+				while(temp.link!=null)
+				{
+					temp=temp.link;
+				}
+			temp.link=newNode;	
+		}
+	}
+	
+	public void deleteNode()
+	{
+		int value;
+		Scanner scannerObj=new Scanner(System.in);
+		
+		System.out.println("Enter the Value for Deletion:");
+		value=scannerObj.nextInt();
+		
+		if(START.getData()==value)
+		{
+			Node temp;
+			temp=START;
+			START=START.link;
+			temp=null;
+			System.out.print("\n First Node Got Deleted with Value:"+value+"\n");
+		}
+		else
+		{
+			Node temp1,temp2;
+			temp1=temp2=START;
+			
+			while(temp2!=null)
+			{
+				if(temp2.getData()==value)
+				{
+					temp1.link=temp2.link;
+					temp2=null;
+					System.out.print("\n Node get Deleted:"+value+"\n");
+					return;
+				}
+				temp1=temp2;
+				temp2=temp2.link;
+			}
+		}
+	}
+	
+	public void traverse()
+	{
+		for(Node temp=START;temp!=null;temp=temp.link)
+		{
+			System.out.print("\n Traversal Data:"+temp.getData()+"==>\n");
+		}
+	}
+	
+	public static void main(String arg[])
+	{
+		LinkedListImpl linkedlist=new LinkedListImpl();
+		
+		linkedlist.addNode();
+		linkedlist.addNode();
+		linkedlist.addNode();
+		linkedlist.addNode();
+		linkedlist.addNode();
+		
+		
+		linkedlist.traverse();
+		linkedlist.deleteNode();
+		linkedlist.traverse();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

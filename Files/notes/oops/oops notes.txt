@@ -1,0 +1,210 @@
+class Employee{
+	int employeeId;
+	String employeeName;
+	int age;
+	// non static variable or instance variable
+	// as they are created inside a class and not in any blocks or methods
+	// non static var cannot be accessed inside a static method
+}
+class MainProg{
+	public static void main(String ar[])		
+	{
+		Employee sam=new Employee();
+		sam.employeeName="Sam";
+		sam.age=33;
+		sam.employeeId=10000;
+		System.out.println(sam.employeeName+" with empId: "+sam.employeeId+" aged: "+sam.age);	//not visible as it stays in another class - employee
+		Employee tom=new Employee();
+		//tom.employeeName="Sam";
+		//tom.age=33;
+		//tom.employeeId=10000;
+		System.out.println(tom.employeeName+" with empId: "+tom.employeeId+" aged: "+tom.age);	//not visible as it stays in another class - employee
+	}
+}
+BankAccount
+3 ppl who has account inthe bank
+accountId, balance, cust_name, bank_name
+
+kathiresan  4:27 PM
+class Product{
+	
+	private int prodId;
+	private String name;
+	private int qty=1;
+	private float price;
+	private boolean availability=true;
+	void purchase()	
+	{
+		//purchase successful ie transaction is successfull
+		qty--;
+		if(qty==0)
+		{
+			availability=false;
+			String msg="Item not available";
+			System.out.println(msg);
+		}
+		else{}
+	}
+	int getProdId()
+	{
+		return prodId;
+	}
+	void setProdId(int newProdId)
+	{
+		prodId=newProdId;
+	}
+}
+class MainTest{
+	public static void main(String ar[])
+	{
+		Product p1=new Product();
+		int id=p1.getProdId();
+		System.out.println(id);
+		p1.setProdId(10001);
+		System.out.println(p1.getProdId());
+		Product p2=new Product();
+		int id1=p2.getProdId();
+		System.out.println("product 2 id is : "+id1);
+		p2.purchase();
+		
+	}
+}
+4:28
+class Hero{}
+int id;
+Hero h=null; //reference variable // default value of any object is null
+h=new Hero();
+or
+classname objname=new classname();
+new -? allocates memory for the object - creates a new object when ever we use it.
+Hero h1=new Hero();
+Ecom proj
+class Product
+	int prodId;//101
+	String name;//tv
+	int qty;//1  --------> 0
+	float price;//30000
+	boolean availability; //true ---> false
+	purchase(){}
+classname objname=new classname();
+constructor :
+	* is to initialize default values for non static/ instance variable
+	* constructor has same name as classname
+	* constructors donot return any value
+	* spl type of function will not have a return type
+	* constructor gets called when obj is created or instantiated
+	
+Encapsulation : Encapsulation describes the ability of an object to hide its data and methods from the rest of the world
+		data binding
+4:28
+class Product{
+	private int prodId;
+	private String name;
+	private int qty=1;
+	private float price;
+	private boolean availability=true;
+	void purchase()	
+	{
+		//purchase successful ie transaction is successfull
+		qty--;
+		if(qty==0)
+		{
+			availability=false;
+			String msg="Item not available";
+			System.out.println(msg);
+		}
+		else{}
+	}
+	int getProdId()
+	{
+		return prodId;
+	}
+	void setProdId(int newProdId)
+	{
+		prodId=newProdId;
+	}
+}
+class MainTest{
+	public static void main(String ar[])
+	{
+		Product p1=new Product();
+		int id=p1.getProdId();
+		System.out.println(id);
+		p1.setProdId(10001);
+		System.out.println(p1.getProdId());
+		Product p2=new Product();
+		int id1=p2.getProdId();
+		System.out.println("product 2 id is : "+id1);
+		p2.purchase();
+		
+	}
+}
+4:28
+OOPS - object oriented programming:
+scripting lang
+Query lang
+programming lang
+		oop - Java,pyth,C#
+		partial obj oriented- c++ - c with class
+		structural - C
+Structural :
+	functions based
+	int main(){
+	
+		bark();
+		return 0;
+	}
+	void bark()
+	{
+		printf('barking');
+	}
+	
+OOPS - object oriented programming:
+Object
+	thing/entity
+	
+	
+	Human
+		eyes,ears,hands
+		sleeps, eats, thinks, talk
+	Car
+	Animal
+	Employee
+	
+	Bike
+defn: having state and behaviour
+Object - > physical entity
+	ea
+	   state - fields/attriutes (programming- variables)
+	   behaviour -actions/ perform (prog- methods)
+	when there is a behavior exhibited - change of value in the state(attributes)
+	when i click on increase vol button in tv remote, the value of current_volume (attribute)
+Class : holds behaviours and state(attr)
+	class Dog{
+		String breed;
+		String color;
+		void bark(){
+		}
+	}
+	* collection of objects
+	* they hold behaviours and attributes which is shared by similiar objects
+	* blue print
+Food - roti, chapathi
+Bird - pigeon, parrot, dove,sparrow....
+	class Bird{
+		wings
+		feather
+		legs
+		beak
+		eyes
+		fly(){}
+		eat(){}
+	}
+
+kathiresan  5:53 PM
+Calculator appliccation
+identify class, methods and variables , implement logic too for above application
+TheatreTicketBooking application
+identify All the class, methods and variables , implement logic too for above application
+5:55
+for second qn no nd logic

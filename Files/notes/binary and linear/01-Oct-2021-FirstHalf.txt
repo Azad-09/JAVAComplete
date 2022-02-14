@@ -1,0 +1,72 @@
+Searching
+=============
+There are two different type of searching mechanism which we can implement they are
+
+1. Linear Search			2.Binary Search
+
+Linear Search
+===============
+- In case of linear search the element will be started searching from the first element till the last element in a sequence.
+
+- Whenever we are finding the element then we can stop the search or we can continue if we want to further check for the similar element.
+
+Demo Program
+================
+import java.util.*;
+
+public class LinearSearchDemo
+{
+	public static void main(String arg[])
+	{
+	
+	int element[]={34,56,43,67,23};
+
+	int searchElement,index;
+
+	Scanner scannerObj=new Scanner(System.in);
+	System.out.println("Enter the Element to Search");
+	searchElement=scannerObj.nextInt();
+
+	for(index=0;index<element.length;index++)
+	{
+		if(element[index]==searchElement)
+		{
+			System.out.println("The element Found at Position:"+(index+1));
+			break;
+		}
+	}
+	
+		if(index==element.length)
+			System.out.println("Element has not Found");
+
+	}
+}
+
+Problem Statement
+===================
+- Write a program to find the player who has scored a specific runs depends on the user input. The program will provide the names of the team in a String array and the runs scored by the player in an integer array. The array has stored the values corresponding to each other.
+
+String playerNames[]={"Pujara","Aswin","Yuvraj","Dhoni","Kohli","Rohit"};
+int runScored[]={89,78,56,45,62,41};
+
+Enter the Score the Player has Scored : 45
+Output
+Dhoni
+
+Write a method called whoScored(String [],int [] , int score) and this method should return a string.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,388 @@
+Real World Objects:::
+
+class
+--class members(variables and functions)
+----creating objects
+
+and accessing class members
+
+Static  Vs   Non-Static(OOPS)
+
+Constructors
+this
+
+Encapsulation--binding all members into single unit
+Point 1:::implemented using Class(wrapping variables and methods inside the class)
+Point 2:::security-----data members----Access specifiers
+Point 3:::accessing those data members using accessor and mutator(get & set methods)
+
+
+4 Access specifiers::
+public
+protected 
+default
+private
+
+8 Access Modifiers::
+static
+final
+......
+
+both specifier and modifier we will be applying to class members
+
+
+
+
+class Product
+{
+int pid,price;
+String pname;
+Product()
+{
+pid=100;
+price=10000;
+pname="DellSpeaker";
+}
+public String toString()
+{
+return "Product Id---"+pid+"---Product Name--"+pname+"----Product Price---"+price;
+}}
+class Demo1
+{
+public static void main(String[] args)
+{
+Product p1=new Product();
+System.out.println(p1);//System.out.println(p1.toString());
+Product p2=new Product();
+System.out.println(p2);
+Product p3=new Product();
+System.out.println(p3);
+}
+}
+
+//toString--converts object(stringbuffer/builder) into readable/printable format
+//toString()---cals automatically using object
+
+
+
+
+
+
+class Product
+{
+int pid,price;
+String pname;
+Product(int pid,int price,String pname)
+{
+this.pid=pid;
+this.price=price;
+this.pname=pname;
+}
+public String toString()
+{
+return "Product Id---"+pid+"---Product Name--"+pname+"----Product Price---"+price;
+}}
+class Demo1
+{
+public static void main(String[] args)
+{
+Product p1=new Product(101,1500,"Webcam");
+System.out.println(p1);
+Product p2=new Product(102,2500,"bluetooth");
+System.out.println(p2);
+Product p3=new Product(102,3500,"Headset");
+System.out.println(p3);
+}
+}
+
+
+this keyword::
+point 1:::to avoid ambugity between class variable(instance) and local parameter variable
+point 2:::this keyword is used to refer current object in a class
+
+
+I  me   myself
+
+
+
+
+
+
+
+class Employee
+{
+int empid;
+String empname;
+Address add;
+double salary;
+}
+
+
+public---global access
+
+
+
+Java----Java Library files----->
+
+JDK---Java Software-----(JVM/JRE-------Java API)
+
+
+
+Static  VS NOn-Static
+
+Same Package  vs Other Package
+
+
+
+
+4 Access specifiers::
+---------------public:::global scope
+same file/same folder/child class/Other folder(package)
+---------------protected::::inheritance(parent/child class)
+same file/same folder/child class of Other folder(package)
+---------------default:::friendly/package
+same file/same package
+---------------private:::secuired access specifier
+same class
+
+class Employee
+{
+public String empname;
+protected int empid;
+Address add;
+private double salary;
+}
+
+
+
+4 Access Specifiers----private,public,protected,default
+
+public class Product  //valid
+{
+public int pid; //valid
+double price;//default scope
+public void disp_details()//yes we can
+{
+public int discount;//Error--local variable--shouldn have any specifier or any modfier
+static int sum;//Error--but method has to be static
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+class Employee
+{
+public String empname;
+protected int empid;
+Address add;
+private double salary;
+}
+
+Salary should not be visible to all employees except Supervisor,HR Manager and CEO
+
+
+The Meaning of Encapsulation is to make sure that not all data is visible to users.
+To achieve this:::
+Rule 1:Declare all variables of class as private
+Rule 2:provide public getter method and setter method to view and modify the data
+(we cannot access them directly)
+
+class Employee
+{
+private String empname;
+private int empid;
+private Address add;
+private double salary;
+public void setEmpName(String empname){this.empname=empname;}
+public void setEmpid(int empid){this.empid=empid;}
+public void setAddress(Address add){this.add=add;}
+public void setSalary(double salary){this.salary=salary;}
+public String getEmpname(){return empname;}
+public String getEmpid(){return empid;}
+public String getAddress(){return add;}
+public String getSalary(){return salary;}
+}
+
+
+
+
+
+
+
+
+
+
+-------Demo Program for setter method and getter method------------
+
+class Employee
+{
+private String empname;
+public void setEmpName(String empname)
+{
+this.empname=empname;
+}
+public String getEmpname()
+{
+return empname;
+}
+class Demo1
+{
+public static void main(String[] args)
+{
+Employee e1=new Employee();
+e1.setEmpName("Jyoti");
+System.out.println(e1.getEmpname());
+}
+
+}
+
+
+-------Demo Program for COnstructor and getter method------------
+class Employee
+{
+private String empname;
+Employee(String empname)
+{
+this.empname=empname;
+}
+public String getEmpname()
+{
+return empname;
+}
+class Demo2
+{
+public static void main(String[] args)
+{
+Employee e1=new Employee("Jyoti");
+System.out.println(e1.getEmpname());
+}
+
+}
+
+
+-------Employee_Compensation_Demo
+class Address
+{
+    private int doorno,pincode;
+    private String streetname,city,state;
+    public Address(int doorno,String streetname,String city,String state,int pincode)
+    {
+        this.doorno=doorno;
+        this.streetname=streetname;
+        this.city=city;
+        this.state=state;
+        this.pincode=pincode;
+    }
+      public int getDoorno(){return doorno;}
+      public int getPincode(){return pincode;}
+      public String getStreetname(){return streetname;}
+      public String getCityname(){return city;}
+      public String getState(){return state;}
+      public void disp_Address()
+     {
+        System.out.println("Doorno---"+doorno+"----Streetname--"+streetname+"--city--"+city+"---state--"+state+"-pincode---"+pincode);
+     }
+}
+class Employee
+{
+private  int empid,age,salary;
+private  String empname;
+private  Address addr;
+public Employee(int empid,String empname,int age,int salary,Address addr)
+{
+    this.empid=empid;
+    this.empname=empname;
+    this.age=age;
+    this.salary=salary;
+    this.addr=addr;
+}
+public int getSalary()
+{
+    return salary+calcHikeSalary(25);
+}
+ public int getEmpid(){return empid;}
+  public int getEmpAge(){return age;}
+   public String getEmpname(){return empname;}
+    public Address getAddress(){return addr;}
+public int calcHikeSalary(int hikepercentage)
+{
+    return salary*hikepercentage/100;
+}
+}
+
+class StartupOrganization
+{
+   private String Organizationname;
+   private Address add;
+  private Employee[] employees;
+    public StartupOrganization( String Organizationname,Address add,Employee[] employees)
+    {
+        this.Organizationname=Organizationname;
+        this.add=add;
+        this.employees=employees;
+    }
+     public String getOrgname(){return Organizationname;}
+      public Address getOrgAddress(){return add;}
+       public Employee[] getEmployees(){return employees;}
+  public void disp_OrganizationDetails()
+   {
+     System.out.println("Organization Name--"+Organizationname);  
+   }
+   public void disp_Address()
+   {
+ System.out.println("Organization Address");
+ System.out.println("Doorno---"+add.doorno+"----Streetname--"+add.streetname+"--city--"+add.city+"---state--"+add.state+"-pincode---"+add.pincode);
+
+   }
+    public String[] getEmpdetails()
+    {
+   String[] tempnames=new String[employees.length];
+   for(int i=0;i<tempnames.length;i++)
+   {
+      tempnames[i]=employees[i].empname;
+   }
+   return tempnames;
+    }
+}
+
+
+
+Home Reading:::
+toString()
+Encapsulation
+getter and setter methods
+4 Access Specifier
+
+Complete 
+Sprint 18.1,  18.2 and 18.3
+Sprint 19.1   and 19.2
+
+
+
+17.1     18.1     19.1  ----->Bookstore-----Books----Author
+
+
+17.2     18.2     19.2  ----->Student------Grading---Report--Statistics
+
+
+
+
+
+
+
+
+
+
+
+
+
+

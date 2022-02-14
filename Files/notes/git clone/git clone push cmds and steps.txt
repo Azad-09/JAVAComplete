@@ -1,0 +1,134 @@
+1. move into the proj folder, cd cmd
+
+2. check whether it is managed by git or not
+	to check if it is mngd - git status 
+
+3. to manage a project using git , git init 
+
+4. md trainer-app
+5. cd trainer-app
+6. first time the project is getting craeted, git init
+7. git add . or *.java or file name seperately  ------staging area
+
+
+
+pushing the code from Local repo to central repo
+
+1. ensure u commit the code to local repo from staging area -> git status, git log
+2. goto gitlab , create a new repo 
+3. git remote add origin "gitlab ssh url"
+4. set upstream
+
+C:\Users\kathi\Desktop>cd..
+
+C:\Users\kathi>cd trainer-app
+
+C:\Users\kathi\trainer-app>echo >product.java
+
+C:\Users\kathi\trainer-app>product.java
+
+C:\Users\kathi\trainer-app>git init
+Reinitialized existing Git repository in C:/Users/kathi/trainer-app/.git/
+
+C:\Users\kathi\trainer-app>git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+C:\Users\kathi\trainer-app>git remote add origin https://myrepos.stackroute.niit.com/kathiresan/trainerapp.git
+
+C:\Users\kathi\trainer-app>git remote add origin https://myrepos.stackroute.niit.com/kathiresan/trainerapp.git
+error: remote origin already exists.
+
+C:\Users\kathi\trainer-app>git add .
+warning: LF will be replaced by CRLF in package-lock.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in package.json.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in public/index.html.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/App.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/index.css.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/index.js.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in src/download.svg.
+The file will have its original line endings in your working directory
+
+C:\Users\kathi\trainer-app>git commit -m "Initial commit"
+[master 0999709] Initial commit
+ 17 files changed, 679 insertions(+), 76 deletions(-)
+ create mode 100644 product.java
+ rewrite src/App.css (100%)
+ rewrite src/App.js (90%)
+ create mode 100644 src/CartItem.js
+ create mode 100644 src/Content.js
+ create mode 100644 src/cartpage.js
+ create mode 100644 src/download.svg
+ create mode 100644 src/header.js
+ rewrite src/index.css (96%)
+ create mode 100644 src/kitelogo.png
+ create mode 100644 src/log.png
+ create mode 100644 src/modalpopup.js
+ create mode 100644 src/smiley.gif
+
+C:\Users\kathi\trainer-app>git push -u origin master
+Enumerating objects: 43, done.
+Counting objects: 100% (43/43), done.
+Delta compression using up to 6 threads
+Compressing objects: 100% (41/41), done.
+Writing objects: 100% (43/43), 784.50 KiB | 16.69 MiB/s, done.
+Total 43 (delta 5), reused 0 (delta 0), pack-reused 0
+To https://myrepos.stackroute.niit.com/kathiresan/trainerapp.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+C:\Users\kathi\trainer-app>
+
+
+
+======================================
+
+generating ssh:
+
+1. run cmd prompt as administrator
+2. ensure that u do it in root location like under ur user name or any root folder
+3. ssh-keygen
+4. file name - u can skip (by default id-rsa)
+5. pass phrase - skip
+6. reenter pass phrase - skip
+7. open the *.pub file withn notepad copy it and paste in the gitlab central repo under SSH settings and add expirydate
+and click add
+
+
+clone or push or pull ---
+
+
+cloning repo:
+
+
+	goto cmd prompt -> git clone "gitlab ssh url"
+
+	dont do git init -----> x
+
+	modify any file
+	
+	git add . or filename
+
+	git commit -m "msg - why u modified"
+	
+	git push
+	
+dont have to give any or add any remote ssh or https url , since it already is aware of the remote location as 
+it was cloned
+
+	
+	
+

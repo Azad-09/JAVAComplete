@@ -1,0 +1,104 @@
+import java.io.*;
+class trycatch2 {
+    public static void main(String[] args) {
+        try{
+           File s=new File ("D:\\Raju.txt"); 
+           s.createNewFile();
+        }
+        catch(IOException e){
+            System.out.println("Error");
+            System.out.println(e);
+        }
+    }
+}
+11:40
+this code isnt printing error mssg
+
+Sangeetha  11:49 AM
+yes
+11:49
+it s correct so no exception
+
+
+
+
+Finally block---always used to close opened resources
+
+try----catch---finally
+or
+try-----finally
+
+-------------------------Till Java 7-----------finally block--close resource------------------------
+import java.io.*;
+class trycatch2 {
+    public static void main(String[] args) {
+        File s=null;
+        try{
+           s=new File ("D:\\Raju.txt"); 
+           s.createNewFile();
+        }
+        catch(IOException e){
+            System.out.println("Error");
+            System.out.println(e);
+        }
+	finally
+       {
+           s.close();
+       }    }}
+-------------------------After Java 7-----------NO Finally block--try with resource------------------------
+import java.io.*;
+class trycatch2 {
+    public static void main(String[] args) {
+	File s=null;
+        try(File s=new File("D:\\Raju.txt")
+       {
+           s.createNewFile();
+        }
+        catch(IOException e){
+            System.out.println("Error");
+            System.out.println(e);
+        }
+
+    }
+}
+
+
+
+
+ArrayIndexOutOfBoundsException
+
+ArithmeticException
+
+NullPOinterException
+
+NumberFormatException
+
+CLasscastException
+
+
+Topics to refer:::
+
+
+try
+catch
+finally
+throw
+throws
+try-with-resources
+
+
+Sprint 25.1
+
+
+
+
+
+
+
+
+
+
+
+
+
+

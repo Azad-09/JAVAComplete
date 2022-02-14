@@ -1,0 +1,18 @@
+class OverloadDemo
+{
+int  Area(int side){   return side*side; 		 }
+int  Area(int len,int bre){   return (len*bre);	 	}
+double Area(double units){   return 3.14*units*units; 	   }
+}
+class Demo5
+{
+public static void main(String[] args) 
+{
+OverloadDemo obj=new OverloadDemo();
+System.out.println("Area of Rectangle--"+obj.Area(12,14));
+System.out.println("Area of Rectangle--"+obj.Area(19,11));
+System.out.println("Area of Circle--"+obj.Area(12.6));
+System.out.println("Area of Square--"+obj.Area(12));
+System.out.println("Area of Square--"+obj.Area(23));
+}
+}

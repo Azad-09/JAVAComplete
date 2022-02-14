@@ -1,0 +1,377 @@
+Software(Applications)(APPS)<------------>Programming Language
+
+Computers--Dekstop/Laptop/Tab/Smart Phones
+Hardware
+Software----->
+System Software---Operating System/AntiVirus/Dos-Prompt
+Application Software----All Application which we are using
+
+Types of Applications::
+Console Applications(CUI-- character user interface)--cmd-based application (user only use keyword/command to interect with computer)
+Example:Unix--commands,Linux
+Windows Applications(GUI-- graphics user interface)---Desktop application (user interect with visual indicator representation)
+Example:chrome,alarm,calc,calendar,eclipse raptor....
+Web Application(using Web browser)--URL    
+www.niit.com,www.flipkart.com, whatsapp web
+Mobile Application
+.....
+
+Programming Language
+1.Low Level Programming Language(Machine code)
+Binary 0 and 1's  (Use binary number as code)
+01010111010111(Gate)
+Example:BASIC, B , BCPL, FORTRAN, PASCAL...
+
+2.High Level Programming Language(English code)
+Example: C C++ Java C#.net....
+
+main()
+{
+int no;
+String name;
+print("Hello All");
+}
+
+Components::
+1.Compiler---Source Code into machine code(JVM)
+2.Library Files----(lib/.dll/header files/Java API/SDK)
+
+API-Application Programming Interface
+dll
+SDK
+
+
+
+Downloading Softwares( .exe  /APK files)
+
+
+Functions-Building Block of All Programming Language
+
+
+High Level Programming Language
+-----POP--Procedural Oriented Programming Language
+Functions    Example:C
+void main()
+{
+printf("Welcome to C!!!");
+}
+
+-----OOPS---Object Oriented Programming Language
+Class & Objects
+class First_Program
+{
+public static void main(String[] ar)
+{
+System.out.println("Welcome to JAVA!!!);
+}
+}
+
+
+
+
+
+First Java  Program:::::
+
+class First_Program
+{
+public static void main(String[] ar)
+{
+System.out.println("Welcome to JAVA!!!);
+}
+}
+
+Compile and Run
+
+Java Software-----JDK
+version/Updates???? New Features and Fixing Bugs
+Sep 2021--JAVA 17 version
+
+
+Notepad and Command prompt to run program
+IDE's---Eclipse, Netbeans, IntelliJ, Visual Studio,blueJ....
+
+NIIT web IDE for JAVA :  https://coding.stackroute.niit.com/
+
+
+
+
+
+JAVA Architecture:::
+1.Java Source Code
+2.CLass file(byte code)
+3.JVM
+4.JAVA API
+
+
+
+In Other Language::::
+Source code-------------Compiler--------------Machine code
+
+
+In Java
+
+Source code-----JAVA Compiler---------BYte code-------JVM-------Machine Code
+Demo1.java-------javac---------------Demo1.class-----------Object code
+
+<---------CompileTime Environment----><---------RunTime Environment-->
+
+Computer---CPU
+JVM--JAVA Virtual Machine
+---Execution Engine
+---Class Loader
+---Memory mgnt---Garbage Collector
+----Byte code verifier/security check
+----Deployment
+
+
+
+JDK
+JVM---COmpiler(JIT compiler)
+JAVA -API
+JRE
+
+
+
+byte b=500;
+short s=50000;
+long mobileno=7566660463;
+
+
+
+
+
+class First_Program
+{
+int no1;//class variable uses default value
+public static void main(String[] ar)
+{
+int no2;//local variable
+System.out.println("Welcome to JAVA!!!);
+System.out.println(no1);//0
+System.out.println(no2);//error--not init
+}
+}
+
+
+class Demo2_program
+{
+int rollno;//valid
+int rollno;//error--Duplicate
+int Rollno;//valid-case sensitive
+int ROLLNO;//valid
+int rollno5;//valid
+int 6rollno;//error--shouldn't begins with no
+int roll*no;//Error--no other sp char
+int _roll_no;//valid
+int $rollno;//valid
+int roll no;//error---no space
+int void;//error---void--keyword
+int $void;//valid--dont use--meaningful name
+}
+JAVA:::
+Variable---->Should begins with alphabets _  $
+DONT's
+---not have other special character(!@#%*())
+
+Variable is a name given to memory location
+ where some data values are store.
+define with data type
+
+int   rollno  = 1001;
+(data (variable)=(value/data)
+type)
+
+
+Priority ---->value/data
+
+
+Keywords----are reserved words which expresses language features
+
+class First_Program
+{
+int no1;//class variable uses default value
+public static void main(String[] ar)
+{
+int no2;//local variable
+System.out.println("Welcome to JAVA!!!);
+System.out.println(no1);//0
+System.out.println(no2);//error--not init
+}
+}
+
+
+Keywords::: class,public, static, void ,main
+System out 
+
+println()
+
+int no1=10;
+no1=20;
+no1=30;
+no1=no1+5;
+System.out.println(no1);//35
+
+
+
+
+
+
+1.Download and install JAVA 11 version
+
+2.Set path to execute commands on prompt
+
+Notepad and Cmd-Prompt
+
+1.First Hello World Java Program
+2.Addition of 2 Numbers
+Outputs:10,20
+Addition Answer:30
+or
+Addition of 10 and 20 is 30
+
+
+Create folder---open NOtepad---type program
+--->save with Demo1.java extension
+Open CommandPrompt----Change path---java Demo1.java
+
+
+3.Greatest of 2 Numbers   10 10(Both are Equal or NO1 s Greatest or no2 is Greatest)
+
+4..Greatest of 3 Numbers
+
+
+
+
+class Demo2
+{
+public static  void main(String[] args)
+{  
+int no1=12,no2=20;
+System.out.print("Addition Program\n");
+int ans=no1+no2;
+System.out.print("Answer-->"+ans+"\n");
+System.out.print("Answer-->"+(no1+no2)+"\n");
+System.out.print("END!!");
+} 
+}
+
+
+print()---prints in same line no\n
+println()--print and take your cursor to next line
+printf()--formatted method for formatting output
+format()
+
+
+%d   Integer
+%c   Char
+%f   Floating & Double
+%s   String
+
+class Demo2
+{
+public static  void main(String[] args)
+{  
+int no1=12,no2=20;
+System.out.println("Addition Program");
+int ans=no1+no2;
+System.out.println("Answer-->"+ans);
+System.out.println("Answer-->"+(no1+no2));
+System.out.println("Addition of "+no1+" and "+no2+" is "+(no1+no2));
+System.out.printf("Addition of %d and %d is %d \n",no1,no2,(no1+no2));
+String name="Jyoti",subject="Science";
+double score=87.7656;   
+//Student Jyoti Scored 87.77% in Science Subject
+System.out.printf("Student %s Scored %2.2f%% in %s Subject\n",name,score,subject);
+System.out.printf("%10d \n",no1);
+System.out.printf("%10s \n",name);
+System.out.println("END!!");
+} 
+}
+
+
+
+Computer---IPO cycle
+Input Devices:::keyboard,mouse,scanner,lightpen,mike,webcam
+Softwares/Applications--Process/programs
+Output Devices:::Monitor,Printer,Speaker
+
+Java-Output::::System class--System.out
+PrintStream class(java.io package)--Implicit --Automatic
+print()/println()/printf()/format()
+PrintWriter class(java.io package)--Explicit
+
+Java-Input::::System class--System.in
+DataInputStream class(java.io package)
+BufferedReader class(java.io package)
+Scanner class(java.util package)
+
+
+
+8 primitive data types and 1 abstract type(String)
+import java.util.Scanner;
+class Demo2
+{
+public static  void main(String[] args)
+{  
+int no1,no2;  String name;  double mark;
+char grade; boolean status; byte class; short rollNo;
+Scanner scanobj=new Scanner(System.in);
+System.out.println("Enter First Number");
+no1=scanobj.nextInt();
+System.out.println("Enter Second Number");
+no2 = scanobj.nextInt();
+System.out.println("Enter Your Name");
+name=scanobj.next();//next()  vs nextLine();
+System.out.println("Enter your Standard");
+class=scanobj.nextByte();
+System.out.println("Enter your Roll Number");
+rollNo=scanobj.nextShort();
+System.out.println("Enter Your Mark");
+mark=scanobj.nextDouble();
+System.out.println("Enter Your Grade");
+grade=scanobj.next().charAt(0);//"hello"
+System.out.println("Enter Your Status");
+status=scanobj.nextBoolean();
+System.out.println("Answer-->"+(no1+no2));
+System.out.println("Hello "+name);
+System.out.println("Mark  "+mark);
+System.out.println("Grade  "+grade);
+System.out.println("Status "+status);
+}
+}
+
+Java Practise Session(Sep 21-FN)
+1.Hello World Program
+2.Addition of 2 Numbers
+
+
+Java Practise Session(Sep 21-AN)
+1.Addition of 2 Nos(various ways of printing)
+2.Formatted Output Demo using printf()
+3.Inputs @ run time using Scanner Class(all 8+1 data types @runtime)
+4.Displaying your Name and Friends name(Pseudocode ref)
+5.Write a Java program to increment Given number by one
+6.Write a Java program to increment Given number by Seven
+7.Multiplication of 3 nos in java
+8.Calculate Quotient and reminder of given 2 number
+9.Calculate Area of Square
+10.Perimeter and Area of Rectangle
+11.Area of Circle
+12.Calculate Simple Interest
+13.Average of 5 Numbers
+
+
+
+
+
+
+
+
+Explore following topics::
+
+library topics
+Deployment
+printf()  VS format()
+next()  vs nextLine()
+
+

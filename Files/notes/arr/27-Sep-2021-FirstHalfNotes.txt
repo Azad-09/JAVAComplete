@@ -1,0 +1,116 @@
+Array
+============
+- Array is a variable which can store multiple values of the same data type. So it is a collection of homogeneous elements.
+
+- Array variable will have index and this index starts with 0. The last index will be sizeofArray-1.
+
+- Array values stored in a contigeous memory location. The values are going to be stored in side by side.
+
+Syntax
+========
+dataType array_name[]=new dataType[size]; //Here size variable need to be specified of any integer.
+
+Example
+===========
+int arr[]=new int[5];  
+
+- Here in the above we are creating an array of five values.
+
+Example
+===========
+int ageOfSoccer[]=new int[11];
+
+Note : Array in java is an object hence we allocate the memory for the array using new operator. This object will have the properties as the member of array and there is an extra member which was provided that is length which will tell us the size of the array.
+
+Demo Program
+=================
+import java.util.*;
+public class ArrayDemo
+{
+	public static void main(String arg[])
+	{
+	int ageOfSoccer[]=new int[11];
+	int index;
+	
+	Scanner scannerObj=new Scanner(System.in);
+
+	//Initialize the values.
+	for(index=0;index<11;index++)
+	{	
+	System.out.println("Enter the Soccer Age");
+	ageOfSoccer[index]=scannerObj.nextInt();
+	}
+	
+	//displaying the array values
+	System.out.print("\n\n Soccer Age \t");
+	for(index=0;index<11;index++)
+	{	
+	System.out.print(ageOfSoccer[index]+"\t");
+	}
+
+	}
+}
+
+Initializing the array when we know the values at compilation
+======================================================
+import java.util.*;
+public class ArrayDemo
+{
+	public static void main(String arg[])
+	{
+
+	int ageOfSoccer[]={34,23,21,28,29,27,18,19,27,25,24};
+	int index;
+	
+	System.out.print("\n\n Soccer Age \t");
+	for(index=0;index<11;index++)
+	{	
+	System.out.print(ageOfSoccer[index]+"\t");
+	}
+
+	}
+}
+
+Demo Program
+==================
+
+import java.util.*;
+public class ArrayDemo
+{
+	public static void main(String arg[])
+	{
+
+	int ageOfSoccer[]={34,23,21,28,29,27,18,19,27,25,24};
+
+	String nameOfSoccer[]={"Roger","Deigo","pele","ronaldo","Peter","Vinod","Neymar","Rohan","Alex","Mohit","Bhutia"};
+
+	int index;
+	
+	System.out.println("Soccer Details");
+	for(index=0;index<11;index++)
+	{
+		System.out.print("Name :"+nameOfSoccer[index]);	
+		System.out.println("\tAge:"+ageOfSoccer[index]);
+	}
+
+	}
+}
+
+Problem Statement Write a java program to count the number of even and odd values in an given array of 10 values.
+
+Problem Statement Write a java program to accept an array of 10 values and find the maximum and minimum value from it.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

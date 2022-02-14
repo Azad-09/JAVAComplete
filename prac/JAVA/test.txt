@@ -1,0 +1,7 @@
+public class Test{
+    public static void main(String[] arg){
+        int i =  1234;
+        int result = (i / 10) * 100 + (i % 10) * 10 + i % 10;
+        System.out.println(result);
+    }
+}

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      rel="SHORTCUT ICON"
+      href="https://static.javatpoint.com/images/favicon2.png"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://static.javatpoint.com/link.css?v=5.0"
+    />
+    <link rel="dns-prefetch" href="https://clients1.google.com" />
+    <link rel="dns-prefetch" href="https://static.javatpoint.com" />
+    <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
+    <link rel="dns-prefetch" href="https://www.google.com" />
+    <link rel="dns-prefetch" href="https://feedify.net" />
+    <title>300 Core Java Interview Questions (2021) - javatpoint</title>
+    <meta
+      name="keywords"
+      content="java interview questions, core java interview questions, oops interview questions"
+    />
+    <meta
+      name="description"
+      content="300 Core Java Interview Questions | Set 1, OOPs interview questions. With assurance of 90% core java interview questions, there are given 201 core java interview questions and answers  with java, .net, php, database, hr, spring, hibernate, android, oracle, sql, asp.net, c#, python, c, c++ etc."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link
+      rel="canonical"
+      href="https://www.javatpoint.com/corejava-interview-questions"
+    />
+    <meta name="theme-color" content="#4CAF50" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta
+      name="twitter:title"
+      property="og:title"
+      content="300 Core Java Interview Questions (2021) - javatpoint"
+    />
+    <meta
+      name="twitter:description"
+      property="og:description"
+      content="300 Core Java Interview Questions | Set 1, OOPs interview questions. With assurance of 90% core java interview questions, there are given 201 core java interview questions and answers  with java, .net, php, database, hr, spring, hibernate, android, oracle, sql, asp.net, c#, python, c, c++ etc."
+    />
+    <meta
+      property="og:url"
+      content="https://www.javatpoint.com/corejava-interview-questions"
+    />
+    <meta property="og:site_name" content="www.javatpoint.com" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pagejavatpoint" />
+    <meta name="twitter:domain" content="www.javatpoint.com" />
+    <meta name="twitter:creator" content="@pagejavatpoint" />
+    ​
+    <link href="https://www.javatpoint.com/manifest.json" rel="manifest" />
+    <script data-cfasync="false" type="text/javascript">
+      (function (w, d) {
+        var s = d.createElement("script");
+        s.src = "//delivery.adrecover.com/37784/adRecover.js?ts=1543562646174";
+        s.type = "text/javascript";
+        s.async = true;
+        (
+          d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0]
+        ).appendChild(s);
+      })(window, document);
+    </script>
+    <script data-cfasync="false" type="text/javascript">
+      (function (w, d) {
+        var s = d.createElement("script");
+        s.src = "//cdn.adpushup.com/37780/adpushup.js";
+        s.type = "text/javascript";
+        s.async = true;
+        (
+          d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0]
+        ).appendChild(s);
+      })(window, document);
+    </script>
+  </head>
+  <body onload="highlightlink()">
+    ​
+    <button onclick="topFunction()" id="myBtn">&#8679; SCROLL TO TOP</button>
+    <div id="page" style="margin: -8px; background-color: #f5f5f4">
+      <div id="container">
+        <div class="header">
+          <table style="width: 100%; margin-bottom: 5px">
+            <tr>
+              <td>
+                <div
+                  style="
+                    clear: both;
+                    float: left;
+                    width: 230px;
+                    margin-top: 15px;
+                    margin-left: 20px;
+                  "
+                >
+                  <a href="https://www.javatpoint.com"
+                    ><img
+                      src="https://static.javatpoint.com/images/logo/jtp_logo.png"
+                      alt="Javatpoint Logo"
+                  /></a>
+                </div>
+                <div style="float: left; width: 60%">
+                  <script>
+                    (function () {
+                      var cx = "005383125436438536544:y1edweedxwi";
+                      var gcse = document.createElement("script");
+                      gcse.type = "text/javascript";
+                      gcse.async = true;
+                      gcse.src = "https://cse.google.com/cse.js?cx=" + cx;
+                      var s = document.getElementsByTagName("script")[0];
+                      s.parentNode.insertBefore(gcse, s);
+                    })();
+                  </script>
+                  <gcse:search></gcse:search>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="headermobile">
+          <div style="margin-top: 10px; padding: 0px; text-align: left">
+            <span style="float: left"
+              ><input
+                type="image"
+                src="images/menuhome64.png"
+                onclick="showmenu()"
+            /></span>
+            <span style="float: left"
+              ><a href="https://www.javatpoint.com"
+                ><img
+                  src="https://www.javatpoint.com/images/logo/jtp_logo.png"
+                  alt="Javatpoint Logo" /></a
+            ></span>
+          </div>
+          <div style="margin: 0px; padding: 0px; clear: both">
+            <form
+              class="navbar-search-m"
+              method="get"
+              action="https://www.google.com/search"
+              target="_blank"
+            >
+              <input
+                type="text"
+                name="q"
+                class="search-query span2-m"
+                placeholder="Search on javatpoint..."
+                title="Search on Javatpoint"
+              />
+              <input
+                type="hidden"
+                name="sitesearch"
+                value="www.javatpoint.com"
+              />
+            </form>
+          </div>
+        </div>
+        <div id="link" style="clear: both">
+          <div class="ddsmoothmenu">
+            <ul>
+              <li>
+                <a href="https://www.javatpoint.com"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/home.png"
+                    alt="home"
+                  />
+                  Home</a
+                >
+              </li>
+              <li>
+                <a href="interview-questions-and-answers" class="selected"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/interview.png"
+                    alt="interview questions"
+                  />
+                  Interview Questions</a
+                >
+              </li>
+              <li>
+                <a href="corejava-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/java.png"
+                    alt="Java Interview Questions"
+                  />
+                  Java</a
+                >
+              </li>
+              <li>
+                <a href="sql-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/sql.png"
+                    alt="SQL Interview Questions"
+                  />
+                  SQL</a
+                >
+              </li>
+              <li>
+                <a href="python-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/python.png"
+                    alt="Python Interview Questions"
+                  />
+                  Python</a
+                >
+              </li>
+              <li>
+                <a href="javascript-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/js.png"
+                    alt="JavaScript Interview Questions"
+                  />
+                  JavaScript</a
+                >
+              </li>
+              <li>
+                <a href="top-angular-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/angular.png"
+                    alt="Angular Interview Questions"
+                  />
+                  Angular</a
+                >
+              </li>
+              <li>
+                <a href="selenium-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/selenium.png"
+                    alt="Selenium Interview Questions"
+                  />
+                  Selenium</a
+                >
+              </li>
+              <li>
+                <a href="spring-boot-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/spring-boot.png"
+                    alt="Spring Boot Interview Questions"
+                  />
+                  Spring Boot</a
+                >
+              </li>
+              <li>
+                <a href="job-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/hr.png"
+                    alt="HR Interview Questions"
+                  />
+                  HR</a
+                >
+              </li>
+              <li>
+                <a href="c-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/c.png"
+                    alt="C Interview Questions"
+                  />
+                  C</a
+                >
+              </li>
+              <li>
+                <a href="data-structure-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/ds.png"
+                    alt="Data Structure Interview Questions"
+                  />
+                  Data Structure</a
+                >
+              </li>
+              <li>
+                <a href="dbms-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/dbms.png"
+                    alt="DBMS Interview Questions"
+                  />
+                  DBMS</a
+                >
+              </li>
+              <li>
+                <a href="html-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/html.png"
+                    alt="HTML Interview Questions"
+                  />
+                  HTML</a
+                >
+              </li>
+              <li>
+                <a href="c-sharp-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/csharp.png"
+                    alt="C# Interview Questions"
+                  />
+                  C#</a
+                >
+              </li>
+              <li>
+                <a href="cpp-interview-questions"
+                  ><img
+                    src="https://static.javatpoint.com/images/icon/cpp.png"
+                    alt="C++ Interview Questions"
+                  />
+                  C++</a
+                >
+              </li>
+            </ul>
+            <br style="clear: left" />
+          </div>
+        </div>
+        <div class="mobilemenu" style="clear: both">​ ​</div>
+        <div id="menu">
+          ​
+          <div class="leftmenu2">
+            <h2 class="spanh2"><span class="spanh2">All Interview</span></h2>
+          </div>
+          <div class="leftmenu">
+            <a href="interview-tips"><span>Interview Tips</span></a>
+            <a href="job-interview-questions"><span>JOB/HR Interview</span></a>
+            <a href="competency-based-interview-questions"
+              ><span>Competency Interview</span></a
+            >
+            <a href="business-analyst-interview-questions"
+              ><span>Business Analyst</span></a
+            >
+            <a href="behavioral-interview-questions"
+              ><span>Behavioral Interview</span></a
+            >
+          </div>
+          <div class="leftmenu2">
+            <h2 class="spanh2">
+              <span class="spanh2">Company Interview</span>
+            </h2>
+          </div>
+          <div class="leftmenu">
+            <a href="company-interview-questions-and-recruitment-process"
+              ><span>Company Interview</span></a
+            >
+            <a href="ibm-interview-questions"><span>IBM Interview</span></a>
+            <a href="infosys-interview-questions"
+              ><span>Infosys Interview</span></a
+            >
+            <a href="capgemini-interview-questions"
+              ><span>Capgemini Interview</span></a
+            >
+            <a href="cognizant-interview-questions"
+              ><span>Cognizant Interview</span></a
+            >
+            <a href="wipro-interview-questions"><span>Wipro Interview</span></a>
+            <a href="accenture-interview-questions"
+              ><span>Accenture Interview</span></a
+            >
+            <a href="igate-interview-questions"><span>iGate Interview</span></a>
+            <a href="tcs-interview-questions"><span>TCS Interview</span></a>
+            <a href="hcl-interview-questions"><span>HCL Interview</span></a>
+            <a href="adobe-interview-questions">Adobe Interview</a>
+            <a href="microsoft-interview-questions">Microsoft Interview</a>
+            <a href="dxc-technology-interview-questions"
+              >DXC Technology Interview</a
+            >
+            <a href="ericsson-interview-questions">Ericsson Interview</a>
+            <a href="exl-interview-questions">EXL Service Interview</a>
+            <a href="indiamart-interview-questions">IndiaMART Interview</a>
+            <a href="intuit-interview-questions">Intuit Interview</a>
+            <a href="spacex-interview-questions">SpaceX Interview</a>
+            <a href="sapient-interview-questions">Sapient Interview</a>
+            <a href="amazon-interview-questions">Amazon Int...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

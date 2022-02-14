@@ -1,0 +1,409 @@
+17.1 18.1 and 19.1
+Bookstore:::
+
+1.Identified class
+2.Identified class members----
+3.Relationship between classes
+
+Bookstore class--bookstorename,books[]
+Books class-----bookname, price,bookgenre
+Author class--authorName, authorRegNO
+
+
+Author class---declare variables/cons/dispAuthordetails()--optional
+
+Books class-----bookname, price,bookgenre
+declare all 3 variables/init cons/ 
+
+Bookstore class--declare variables/cons
+String bookstorename;
+Books[] books;
+method---discountpricecalculation
+
+public int discountpricecalculation(books[],discountper)
+{
+book.getGenre()=="fiction"
+{
+return book.setPrice(calculation)
+}
+
+
+Main()
+{
+Author1-->object  Author3-->object  Author3-->object
+Book1--->object   Book2--->object  Book3--->object
+BookStore -->object
+Books[] b1={book1,book2,book3};
+}
+
+
+
+
+OOPS
+real world objects
+class
+class members---variables and methods
+class relationships
+
+implementing in programs---
+Address class----Employee class-----Organization class
+Bookstore class--Books class---Author class
+
+
+Features of OOPS:::
+1.Encapsulation
+2.Abstraction
+3.Inheritance
+4.Polymorphism
+
+
+1.Encapsulation---class/access specifiers/get & set methods
+
+private variables and public constructor and public getter methods
+
+or
+
+private variables and public setter methods and public getter methods
+
+
+2.Inheritance----
+
+Class relationships:::
+1.Composition(Associtation----depends--part of/has a 
+2.Aggregation(Associtation----
+3.Utilization
+4.Instantiation
+5.Inheritance
+
+
+class1-----class2------class3
+
+Humanbeing class--heart class
+Car class--engine class
+
+
+Animal class-----Dog class------Cat class
+
+
+Parent ----child 
+
+
+Book (bookname,category,price,noofpages,author)
+
+TextBook(bookname,category,price,noofpages,author+subject)
+
+StoryBook(bookname,category,price,noofpages,author+genre)
+
+
+
+we have only one parent class
+we have many child class for one parent
+
+
+
+Inheritance::: Deriving a new class from existing class
+-----reusuability
+------avoid code duplication
+
+
+A-----B 
+
+
+-----------------------------------Single  Inheritance-------------------
+class A
+{
+}
+class B extends A
+{
+}
+
+
+
+
+-----------------------------------Hierarchial  Inheritance-------------------
+
+class A
+{
+}
+class B extends A
+{
+}
+class C extends A
+{
+}
+
+-----------------------------------Multilevel  Inheritance-------------------
+
+class A
+{
+}
+class B extends A
+{
+}
+class C extends B
+{
+}
+
+
+
+-----------------------------------Hybrid  Inheritance-------------------
+
+class A
+{
+}
+class B extends A
+{
+}
+class C extends A
+{
+}
+class D extends C
+{
+}
+
+
+
+class X{}
+class Y{}
+class Z extends X,Y{}  //Error
+
+
+
+
+
+
+class Calc
+{
+protected int no1=100,no2=200;
+}
+class Add extends Calc
+{
+void add_method(){System.out.println("Addition--"+(no1+no2));
+}
+class Demo1
+{
+public static void main(String[] ar)
+{
+Add obj1=new Add();
+obj1.add_method();
+System.out.println("No1---"+obj.no1);//valid
+obj.no1=1000;
+System.out.println("No2---"+obj.no2);//valid
+}
+}
+
+class Calc
+{
+protected int no1=100,no2=200;
+}
+class Add extends Calc
+{
+void add_method(){System.out.println("Addition--"+(no1+no2));
+}
+class Sub extends Calc
+{
+void sub_method(){System.out.println("Subtraction--"+(no1-no2));
+}
+class Demo1
+{
+public static void main(String[] ar)
+{
+Add obj1=new Add();
+obj1.add_method();
+System.out.println("No1---"+obj.no1);//valid
+obj.no1=1000;
+System.out.println("No2---"+obj.no2);//valid
+}
+}
+
+
+
+
+
+
+
+Super--->call parent class functionality
+
+super() will call parent claass cons
+super()--implicit /only one super
+
+there should not be 2 or more super()/super first line anywhere block
+
+
+
+
+
+class X
+{
+X(){System.out.println("X CONS");}
+}
+class Y extends X
+{
+Y(){System.out.println("Y CONS");}
+}
+class Z extends X
+{
+Z(){System.out.println("Z CONS");}
+}
+class Demo1
+{
+public static void main(String[] ar)
+{
+System.out.println("inside Main");
+Y obj1=new Y();
+Z obj2=new Z();                   // inside main X Y    X  Z
+}
+}
+
+
+
+
+class X
+{
+X(int no)
+{
+System.out.println("X CONS---no----"+no);}
+}
+class Y extends X
+{
+Y(char x,char y)
+{
+  super(250);  
+System.out.println("Y CONS");
+}
+}
+class Demo11
+{
+public static void main(String[] ar)
+{
+Y obj=new Y('i','j');
+}
+}
+
+
+
+
+
+
+
+When a classes having common features/functionalities--->Sibilings classes
+
+those common functionalities can be put inside class called as Parent /Super class
+
+
+
+
+
+
+
+
+
+Concept Session :Demo
+
+
+class Employee
+{
+int empid;
+String empname;
+String Address;
+Employee(int empid,String empname,String Address)
+{
+ this.empid=empid;
+ this.empname=empname;
+ this.Address=Address;
+}
+void dispDetails()
+{
+    System.out.println("Empid---"+empid+"---EmpName---"+empname+"--Address--"+Address);
+}
+}
+
+
+
+
+
+
+
+
+
+class PermanentEmp extends Employee
+{
+double basicpay,PF,grosssalary;
+PermanentEmp(int empid,String empname,String Address,double basicpay,double PF,double grosssalary)
+{
+ super(empid,empname,Address);
+ this.basicpay=basicpay;
+ this.PF=PF;
+ this.grosssalary=grosssalary;
+}
+void calcGrossSalary()
+{
+    super.dispDetails();
+    grosssalary=basicpay-PF;
+    System.out.println("GrossSalary---"+grosssalary);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TemporaryEmp extends Employee
+{
+double noofhours,salaryperhour,totalsalary;
+TemporaryEmp(int empid,String empname,String Address,double noofhours,double salaryperhour,double totalsalary)
+{
+super(empid,empname,Address);
+this.noofhours=noofhours;
+this.salaryperhour=salaryperhour;
+this.totalsalary=totalsalary;
+}
+void calcTotalSalary()
+{
+    super.dispDetails();
+  totalsalary=noofhours*salaryperhour;
+    System.out.println("TOtalSalary---"+totalsalary);
+}
+}
+
+
+
+
+
+
+class HelloWorld 
+{
+   public static void main(String[] args) 
+    {
+    PermanentEmp pe1=new PermanentEmp(1001,"Vishnu","Bangalore",25000,1800,0);
+    PermanentEmp pe2=new PermanentEmp(1002,"Monish","Chennai",30000,2500,0);
+    TemporaryEmp te1=new TemporaryEmp(3001,"Joel","Kolkata",74,1200,0);
+    TemporaryEmp te2=new TemporaryEmp(3002,"Jivan","Pune",51,900,0);  
+    pe1.calcGrossSalary();
+     pe2.calcGrossSalary();
+     te1.calcTotalSalary();
+       te2.calcTotalSalary();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+

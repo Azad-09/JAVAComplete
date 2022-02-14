@@ -1,0 +1,389 @@
+
+
+
+class Addition{
+
+	int add(int a,int b){
+		int res=a+(b*2);
+		return res;
+	}
+}
+
+dry run:
+a, b = res
+===========
+1, 2 = 3
+
+-1, -2 = -3
+
+1 ,-2 = -1
+
+test - 
+
+class AdditionTest{
+
+	@Test
+	void addTest1(){
+		//  assertEquals(expectingOutCome,actual value);
+		  assertEquals(3,add(1,2));
+			3==5 error 
+	}
+	@Test
+	void addTest2(){
+
+		add(-1,-2);
+	}
+}
+
+
+
+operators
+nested for loop :
+
+how to make a forloop like while loop
+
+what is a perfect infinite loop
+
+star pattern
+
+functions
+
+variable declaration and initialization
+
+
+
+
+	1. declare variable before usage
+	2. paranthesis '()' - then its a function
+	3. variables in a function or in a if block or in for or any loop must be initialized to default value 
+		 depending on data type.
+		
+		For ex: int a; //variable must be initialized
+			int a=0; 
+			float b;
+			float b=0.0f;
+			boolean c;
+			boolean c=false;
+
+
+	4. proper naming is mandatory
+	
+		variable names should not start with capital or numbers
+	
+			1. id,price	
+			2. employeeId
+			3. employeeName
+			3. employeeSubcourseName
+		methods
+
+			findAverage()
+
+		Constants :  
+	
+			float PI=3.14f;
+			String DIRECTION="";
+			
+
+declaration & initialization:
+
+		int a;    //declaration
+		int a,b,c;
+				
+		int a=0;  //initialization
+		int a=9,b=4,c=9;
+	
+		int res=0;
+		res=add(2,3);
+				
+		or		
+		
+		int res=add(2,3);
+		
+
+
+arithmetic optrs ===> + - * / %
+
+conditional optr ===> >,<, >=,<=, != or <>,==
+
+logical optr ===> (and or not) => && , || , !
+
+	&& - both conditions must be true
+
+
+	if(a>b && a>c) --> a is great
+
+	
+	|| =  checks if any one condn is true
+
+
+	if(choice=='Y' || choice=='y') ==> do process
+
+
+	! -  negation
+
+	status =true; 
+	if (!status){}
+	else{ //gets executed}
+
+
+post and pre increment  ---- shruti
+
+	++inc and inc++
+
+ternary operator : -->? : 
+==========================
+
+	int a=90; int b=78;
+
+syntax:
+========
+	condition? true : false 
+
+	a>b? "a i s greatest" : "b is greatest"
+
+difference b/w ternary and if else
+
+	the returned value in ternary can be stored in a variable which is possible but consumes more line
+
+		String result=(a>b)? "a i s greatest" : "b is greatest"	;
+
+complex formation:
+
+		(a>b)? ((a>c)? "a is great": (b>c)? "b is great": "cis great")	
+
+compound assignment : += ===> a+=3
+
+			a=a+3;
+
+
+
+nested for loop :
+
+
+		for()
+		{
+			for(){
+
+			}
+		}
+		
+
+1. inner loop gets executed said times whenn outer loop runs once
+
+
+		for(int i=0;i<=3;i++) ===> //rows
+		{
+			for(int j=0;j<=3;j++) //cols
+			{
+
+			}
+		}
+
+when i=0, how many times inner loop gets executed ?  4times
+
+
+
+0-> - - - 
+1-> - - - 
+2-> - - - 
+
+
+for(int i=1;i<5;i++)
+	{
+		for (int j=5;j>i;j--)
+		{
+
+		System.out.println(" ");	
+		}
+		for (int k=1;k<=(i*2);k++)
+		{
+			System.out.println("*");	
+		}
+		System.out.println();
+	}
+
+
+/* 
+  This is a very typical JAVA program, that
+  simply prints "Hello World, happy programming!" to standard output, which is your console usually
+ 
+  Every JAVA program has class, which can be public
+  
+  Your class name and File name should be same for JAVA program to compile and run successfully
+ */
+class HelloWorld {
+   //diff between static and non static
+    int a=1;    //non static data mem
+    static int b=2;  //static data mem
+
+    public static void main(String[] args) {
+       int k=90; //local variable
+        //System.out.println(a);//non-static variable a cannot be referenced from a static context
+        //create a obj to bring non static variable inside static method
+        //creating obj - syntax: classname objname=new classname();, use classname of where the variables belong to
+
+        HelloWorld h=new HelloWorld();
+        HelloWorld h1=new HelloWorld();
+        HelloWorld h2=new HelloWorld();
+
+      //  System.out.println(h.a);
+      //  System.out.println(b);
+     //   System.out.println(h.b); //can also use obj to access static var- not recommended in real time
+      //  System.out.println(HelloWorld.b); //use class name to access static variable always - recommended in real time scenario
+
+        System.out.println(++h.a); //2
+        System.out.println(++h1.a);//2
+        System.out.println(++h2.a);//2
+
+        System.out.println(++h.b); //3
+        System.out.println(++h1.b);//4
+        System.out.println(++h2.b);//5
+        HelloWorld.meth();
+        h.nonStaticMeth();
+
+    }
+
+    static void meth(){
+        System.out.println("static method");
+    }
+     void nonStaticMeth(){
+        System.out.println("non static method");
+    }
+    
+    }
+
+
+
+class Employee{
+
+    int id;
+    String name;
+    String compName;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+  This is a very typical JAVA program, that
+  simply prints "Hello World, happy programming!" to standard output, which is your console usually
+ /* 
+  This is a very typical JAVA program, that
+  simply prints "Hello World, happy programming!" to standard output, which is your console usually
+ 
+  Every JAVA program has class, which can be public
+  
+  Your class name and File name should be same for JAVA program to compile and run successfully
+ */
+class HelloWorld {
+   //diff between static and non static
+    int a=1;    //non static data mem
+    static int b=2;  //static data mem
+
+    public static void main(String[] args) {
+       int k=90; //local variable
+        //System.out.println(a);//non-static variable a cannot be referenced from a static context
+        //create a obj to bring non static variable inside static method
+        //creating obj - syntax: classname objname=new classname();, use classname of where the variables belong to
+
+        HelloWorld h=new HelloWorld();
+        HelloWorld h1=new HelloWorld();
+        HelloWorld h2=new HelloWorld();
+
+      //  System.out.println(h.a);
+      //  System.out.println(b);
+     //   System.out.println(h.b); //can also use obj to access static var- not recommended in real time
+      //  System.out.println(HelloWorld.b); //use class name to access static variable always - recommended in real time scenario
+
+        System.out.println(++h.a); //2
+        System.out.println(++h1.a);//2
+        System.out.println(++h2.a);//2
+
+        System.out.println(++h.b); //3
+        System.out.println(++h1.b);//4
+        System.out.println(++h2.b);//5
+        HelloWorld.meth();
+        h.nonStaticMeth();
+
+    }
+
+    static void meth(){
+        System.out.println("static method");
+    }
+     void nonStaticMeth(){
+        System.out.println("non static method");
+    }
+    
+    }
+
+
+
+class Employee{
+
+    int id;
+    String name;
+    String compName;
+}
+  Every JAVA program has class, which can be public
+  
+  Your class name and File name should be same for JAVA program to compile and run successfully
+ */
+class HelloWorld {
+   //diff between static and non static
+    int a=1;    //non static data mem
+    static int b=2;  //static data mem
+
+    public static void main(String[] args) {
+       int k=90; //local variable
+        //System.out.println(a);//non-static variable a cannot be referenced from a static context
+        //create a obj to bring non static variable inside static method
+        //creating obj - syntax: classname objname=new classname();, use classname of where the variables belong to
+
+        HelloWorld h=new HelloWorld();
+        HelloWorld h1=new HelloWorld();
+        HelloWorld h2=new HelloWorld();
+
+      //  System.out.println(h.a);
+      //  System.out.println(b);
+     //   System.out.println(h.b); //can also use obj to access static var- not recommended in real time
+      //  System.out.println(HelloWorld.b); //use class name to access static variable always - recommended in real time scenario
+
+        System.out.println(++h.a); //2
+        System.out.println(++h1.a);//2
+        System.out.println(++h2.a);//2
+
+        System.out.println(++h.b); //3
+        System.out.println(++h1.b);//4
+        System.out.println(++h2.b);//5
+        HelloWorld.meth();
+        h.nonStaticMeth();
+
+    }
+
+    static void meth(){
+        System.out.println("static method");
+    }
+     void nonStaticMeth(){
+        System.out.println("non static method");
+    }
+    
+    }
+
+
+
+class Employee{
+
+    int id;
+    String name;
+    String compName;
+}

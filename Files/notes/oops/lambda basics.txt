@@ -1,0 +1,242 @@
+Lamda Basics
+=============
+- Enables functional programming
+- Readable and concise code implementation.
+- Easier to use API and libraries.
+- Enable support for parallel processing.
+
+Functional Programming
+======================
+- Functional programming is the one basically it wil be used when we want to write the code which can be short and elegant in certain situation.
+
+- Functional programming does not replace the OOP but it is just a way of another programming model.
+
+Traditional Way of Writing Program
+===============================
+public interface Greeting {
+	public void greet();
+}
+public class GreetingImpl implements Greeting {
+	public void greet(){
+		System.out.println("Hello Good Morning");
+	}
+}
+public class GreetingMain {
+	public static void main(String arg[]){
+		GreetingImpl objGreetingImpl=new GreetingImpl();
+		objGreetingImpl.greet();
+	}
+}
+
+- We further concise the code using the anonymous class implementation so that we need not to write the middle level classes which has to implement the interface method and whose objects we are creating.
+
+public interface Greeting {
+	public void greet();
+}
+
+public class GreetingMain 
+{
+	public static void main(String arg[])
+	{	
+		Greeting objGreeting=new Greeting(){
+					public void greet(){
+						System.out.println("Hello Good Morning");
+					}
+				};
+		objGreeting.greet();
+	}
+}
+
+Using Lamdas in this Context
+==========================
+- In the above context where we created an anonymous class which has created another class though we are not creating.
+
+- That class object what we are using so here in the above program there GreetingMain$1 is the class which is created for Greeting interface implementation and we are using that class object to call.
+
+public interface Greeting {
+	public void greet();
+}
+
+public class LamdaDemo1 
+{
+	public static void main(String arg[])
+	{
+		Greeting objGreeting=()->System.out.println("Hello Good Morning");		
+		objGreeting.greet();
+	}
+}
+
+- Here we can see that the ()-> (Lamda) is implementing the greeting function and it does not create any particular class.
+
+- We can implement lamda on a functional interface. 
+
+- A functional interface is the interface which is having only one abstract method in it. So we need to ensure that when the interface will be consumed by the lamda then better to implement the FunctionalInterface annotation.
+
+Functional Interface
+================
+An informative annotation type used to indicate that an interfacetype declaration is intended to be a functional interface asdefined by the Java Language Specification.Conceptually, a functional interface has exactly one abstract method.
+
+- This annotation is available in java.lang package.
+
+@FunctionalInterface
+public interface Greeting {
+	public void greet();
+}
+
+Expression  & Block Lamdas
+==========================
+public interface FunctionDemoInterface 
+{
+	public void add(int num1,int num2);
+}
+public class LamdaDemo1 
+{
+	public static void main(String arg[]){
+		//Expression Lamdas
+		FunctionDemoInterface obj=(int n1,int n2)->System.out.println(n1+n2);
+		obj.add(300, 200);
+		
+		//Block Lamdas
+		FunctionDemoInterface obj2=(int n1,int n2)->{
+			int num3;
+			num3=n1+n2;
+			System.out.println(num3);
+		};
+		obj2.add(400, 200);
+	}
+}
+
+Demo Program-2
+================
+- The function of interface which returns the value
+
+public interface FunctionDemoInterface {
+	public int add(int num1,int num2);
+}
+
+public class LamdaDemo1 
+{
+	public static void main(String arg[])
+	{
+		//Expression Lamda
+		FunctionDemoInterface obj=(int n1,int n2)->n1+n2;
+		System.out.println("Lamda Returned me Value:"+obj.add(300, 200));
+		
+		//Block Lamdas
+		FunctionDemoInterface obj2=(int n1,int n2)->{
+			int num3;
+			num3=n1+n2;
+			return num3;
+		};
+		System.out.println("Lamda Block Returned me Value:"+obj2.add(400, 200));
+		
+		
+	}
+}
+
+Demo Program-3
+================
+public class LamdaDemo1 
+{
+	public static void main(String arg[])
+	{
+		//Expression Lamda
+		FunctionDemoInterface obj=(n2,n1)->n1+n2;
+		System.out.println("Lamda Returned me Value:"+obj.add(300, 200));
+		
+		//Block Lamdas
+		FunctionDemoInterface obj2=(n1,n2)->{
+			int num3;
+			num3=n1+n2;
+			return num3;
+		};
+		System.out.println("Lamda Block Returned me Value:"+obj2.add(400, 200));	
+	}
+}
+
+Built in Functional Interfaces
+===========================
+- Java provides a multiple functional interfaces which means the interface which contains only one abstract method. 
+
+- Some of the interface are 1. Comparable 	2.Comparator	3.Runnable	4.ActionListener
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class RouteMain 
+{
+	public static void main(String arg[])
+	{
+		
+		ArrayList<Route> routeList=new ArrayList<Route>();
+		
+		routeList.add(new Route("Mumbai","Delhi",4500,789,2));
+		routeList.add(new Route("Banglore","Dehradun",5500,1289,3));
+		routeList.add(new Route("Koklata","Coimbatore",3500,589,1));
+		routeList.add(new Route("Chennai","Hyderabad",5700,1389,3));
+		routeList.add(new Route("Chennai","Delhi",5700,1389,3));
+		
+		/*Comparator<Route> sourceWiseSorting=(route1,route2)->
+			{
+				return route1.getSourceLocation().compareTo(route2.getSourceLocation());
+			};
+		*/
+		do
+		{
+		int choice;
+		System.out.println("Enter Your Choice 1.Source Wise 2. Destination Wise 3.Fare Wise:");
+		choice=new java.util.Scanner(System.in).nextInt();
+		
+		
+				switch(choice)
+				{
+				case 1:
+					Collections.sort(routeList,(route1,route2)->
+					{
+						return route1.getSourceLocation().compareTo(route2.getSourceLocation());
+					});
+					break;
+				case 2:
+					Collections.sort(routeList, new DestinationWiseSort());
+					break;
+				case 3:
+					Collections.sort(routeList, (route1,route2)->
+					{
+						 if(route1.getFare()>route2.getFare())
+							 return 1;
+						 else if(route1.getFare()<route2.getFare())
+							 return -1;
+						 else 
+							 return 0;
+					});
+					break;
+				default:
+					System.out.println("Invalid Choice:");
+				}
+				
+				for(Route route:routeList)
+				{
+					System.out.println(route);
+				}
+			
+		}while(true);
+		
+		
+		}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

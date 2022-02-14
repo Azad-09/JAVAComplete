@@ -1,0 +1,19 @@
+class HelloWorld
+{
+public static void main (String[] args)
+{
+System.out.print("Hello World");
+}
+}
+
+
+Syntax of Function/Method :-
+
+accesSpecifier Modifier returnType variable(Parameter) {
+
+
+}
+
+public static int age(num) {
+
+}

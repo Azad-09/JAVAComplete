@@ -1,0 +1,42 @@
+OOPS : object oriented programming system
+   1. Object & Class
+   2. Encapsulation :- process of binding data and code into a single unit(for developer)
+   3. Inheritance :- helps us in achievinng reusability of code
+   4. Polymorphism
+   5. Abstraction :- what can be done rather than how it is done - mainly for end user(hide the logical part)
+
+functional programming vs oops vs structural
+
+
+Java- It is not a pure OOPS because it is still using primitive data type
+
+James Gosling, Patrick Naughton, Mike Sheridon => project green, OAK, JAVA (Coffee Bean)
+
+It can run on any machine (WORA) Write Once Run Anywhere
+
+Architecture:-
+
+JDK - java development kit ---> has all the library file to create any java application
+
+JRE - java runtime enviroment ---> It is the place where we run the programme
+
+JVM - java virtual machine ---> get the bytecode and convert it into machine code
+
+javac - is a compiler for java prog ---> src code gets converted into bytecode(intermidiate code)
+
+sample.jv ---> compile code(javac) ---> Sample.class(bytecode)
+
+JRE vs JVM
+
+JRE is nothing but a specification
+JVM is a person who is going to impplement those specification
+
+JVM architecture :-
+
+class loader ---> helps in loading the class files (local file first then the remote file)
++
+Bytecoder verifier ---> verify the bytecode whether there is any modification or any error
++
+JIT Compiler
++
+AOT Compiler

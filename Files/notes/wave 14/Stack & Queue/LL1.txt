@@ -1,0 +1,164 @@
+import java.util.*;
+class Student
+{
+    private String name;
+    private int roll;
+
+    Student(String name,int roll)
+    {
+        this.name=name;
+        this.roll=roll;
+    }
+    public String getName()
+    {
+        return name;
+    }
+    public int getRoll()
+    {
+        return roll;
+    }
+    public String toString()
+    {
+        return "Student[name:::"+name+",roll:::"+roll+"]";
+    }
+}
+
+
+
+class Node
+{
+    private Student data;
+    private Node next,previous;   
+    public Node(Student data) {
+        this.data = data;
+    }
+    public void setNext(Node n)
+    {
+        this.next=n;
+    }
+    public Student getData()
+    {
+        return data;
+    }
+    public Node getNext()
+    {
+        return next;
+    }
+     public Node getPrevious(){
+        return previous;
+    }
+ 
+    public void setPrevious(Node previous){
+        this.previous = previous;
+    }
+}
+ class StudentList {
+    Node start;
+    Node end;
+    public void insert(Student data)
+    {
+       Node newNode = new Node(data);
+       Node current = start;
+       Node previous = null;
+       if(current == null){
+          start = newNode;
+          end = newNode;
+       }
+       else{	 
+          newNode.setNext(current);  //102(aarthi)<----->101(arun)
+          //current.setPrevious(newNode);
+          start = newNode;
+       }
+         }
+ 
+    public int getTheNumberOfStudents(Node temp){
+       Node current = start;
+       int count = 0;
+       while(current!=null){
+          current = current.getNext();
+          count++;
+       }
+       return count;
+
+   }
+      public String deleteStudent(String n)
+    {
+       Node current = start;
+       if(current == null){
+          return "Nothing to delete";
+       }
+       else{
+          while(!(current.getData().getName().equals(n)) && current.getNext()!=null){
+             current = current.getNext();
+          }
+          if(current.getData().getName().equals(n)){
+             if(current.getNext() !=null){
+                current.getNext().setPrevious(current.getPrevious());
+             }
+             if(current.getPrevious() !=null){
+                 current.getPrevious().setNext(current.getNext());
+             }
+             return "deleted"; 
+          }
+       }
+           return "Nothing to delete";
+       
+    }
+
+
+ 
+  
+
+    
+}
+
+public class Main
+{
+	public static void main(String[] args)
+    {    Scanner sc=new Scanner(System.in);
+            StudentList list=new StudentList();            
+            while(true)
+            {
+                System.out.println("Select an option\n1.Insert\n2.View\n3.Delete\n4.Exit\nEnter your option");
+                int option=sc.nextInt();
+                switch(option)
+                {
+                    case 1: System.out.println("Enter name and roll of a student");
+                            sc.nextLine();
+                            String name=sc.nextLine();
+                            int roll=sc.nextInt();
+                            Student s=new Student(name,roll);
+                            list.insert(s);
+                            System.out.println("Insertion Successful");
+                            break;
+                    case 2:list.Traversal(); break;
+                    case 3: sc.nextLine();System.out.println("Enter name of a student");
+                            String name1=sc.nextLine();
+                            System.out.println(list.deleteStudent(name1));break;
+                    case 4:  System.exit(0);break;
+                    default: System.out.println("Invalid choice");
+
+                }
+	}
+}
+}
+
+
+    public  void backwardTraversal()
+    {
+        Node current=end;
+       while(current!=null)
+       {
+          System.out.println(current.getData());
+          current=current.getPrevious();
+       }
+    }
+ private void forwardTraversal()
+    {
+       Node current=start;
+       while(current!=null)
+       {
+          System.out.println(current.getData());
+          current=current.getNext();
+       }
+    }

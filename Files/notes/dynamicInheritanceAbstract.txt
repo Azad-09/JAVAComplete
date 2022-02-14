@@ -1,0 +1,236 @@
+class Lady{
+	void work()
+	{
+	System.out.println("working");
+	}
+}
+class Employee extends Lady
+{
+	void work()
+	{
+	System.out.println("office working");
+	}
+}
+class HomeMaker extends Lady
+{
+	void work()
+	{
+	System.out.println("cooking");
+	}
+}
+class Member extends Lady
+{
+	void work()
+	{
+	System.out.println("does social work");
+	}
+}
+class TestPolymorphism{
+	public static void main(String a[])
+	{
+		Lady l=null;//reference variable of base class
+		Employee e=new Employee();
+		//HomeMaker h=new HomeMaker();
+		//Member m=new Member();
+		l=e;
+		l.work();
+		/*Employee e=new Employee();
+		e.work();
+		HomeMaker h=new HomeMaker();
+		h.work();
+		Member m=new Member();
+		m.work();	*/
+	}
+}
+
+kathiresan  5:54 PM
+generalization
+	//is also similiar inheritance relationship
+	//but we called common behaviour which cannot be defined
+	//also we can have behaviour which shared by all sub class
+abstract class Lady{
+	abstract void work();
+}
+class Employee extends Lady
+{
+	void work()
+	{
+	System.out.println("office working");
+	}
+}
+class HomeMaker extends Lady
+{
+	void work()
+	{
+	System.out.println("cooking");
+	}
+}
+class Member extends Lady
+{
+	void work()
+	{
+	System.out.println("does social work");
+	}
+}
+class TestAbstraction{
+	public static void main(String a[])
+	{
+		
+	}
+}
+///all abstract methods must be redefined or overridded in sub class
+abstract class Employee{
+	abstract void work();
+	float calculateSalary()
+	{
+		return 23459.6f;
+	}
+}
+class Admin extends Employee{
+	 void work()		
+	 {
+		System.out.println("adminstrate ....");
+	 }
+	
+}
+class Manager extends Employee{
+ 	 void work()		
+	 {
+		System.out.println("manage projects....");
+	 }
+}
+class TestAbstraction{
+	public static void main(String a[])
+	{
+	//abstract cannot be instantiated
+	//Employee e=new Employee();
+	Employee e=null;
+	e=new Admin();
+	e.work();
+	float sal=e.calculateSalary();
+	System.out.println(sal);
+		
+	}
+}
+5:54
+abstract class AbstractSample{
+	//zero methods
+	//one abstract method
+	abstract void display();
+	abstract void count(); //more abstract meth
+	void delete()
+	{
+		System.out.println("concrete method");
+	}
+}
+5:54
+class Lady{
+	void work()
+	{
+	System.out.println("working");
+	}
+}
+class Employee extends Lady
+{
+	void work()
+	{
+	System.out.println("office working");
+	}
+}
+class HomeMaker extends Lady
+{
+	void work()
+	{
+	System.out.println("cooking");
+	}
+}
+class Member extends Lady
+{
+	void work()
+	{
+	System.out.println("does social work");
+	}
+}
+class TestPolymorphism{
+	public static void main(String a[])
+	{
+		Lady l=null;//reference variable of base class
+		Employee e=new Employee();
+		//HomeMaker h=new HomeMaker();
+		//Member m=new Member();
+		l=e;
+		l.work();
+		/*Employee e=new Employee();
+		e.work();
+		HomeMaker h=new HomeMaker();
+		h.work();
+		Member m=new Member();
+		m.work();	*/
+	}
+}
+/*
+	ElectronicDevice e - implement dyn poly
+		on()
+		off()	
+	Tv
+	Radio
+	Dvd
+primate - implement dyn poly
+*/
+5:54
+dynamic polymorphism:
+poly - many
+morph - forms
+var - varargs
+constr -
+methods -  num of param, order, type of param
+static binding: early binding
+	
+class Emp{
+//	private, final
+	static void getSalary()
+	{
+	}
+	
+}
+Emp.getSalary();
+dynamic polymorphism: dynamic binding
+	if the methods is mapped/resolved at runtime to an obj
+Lady lObj
+Employee - 9to5
+HomeMaker - 6to7
+Member - wends 9-12
+Human() - talk()
+Friend - talk() {}
+Son - talk(){}
+Trainer - talk(){}
+Primate
+	public void walk()
+	{
+ 	 Sop("uses 2 legs and 2 hands");
+	}
+	jump()
+Human extends Primate
+	//copy/reference of the methods in base
+	//walk(), jump()
+	public void walk()//logic is redefined or overrirdden
+	{
+		Sop("uses 2 legs")
+	}
+	talk();
+	thinki();
+Human h=new Human();
+h.walk();
+h.jump();
+h.talk():
+Abstraction:
+	Abstract class
+	interface
+Abstract class - we achieve 50% of abstraction
+	* is java class with a abstract keyword as its prefix (mandatory)
+	* it may have zero or one or many abstract methods
+	
+		abstract method is nothing but a method which has no body
+	* can also have zero or one or many concrete methods
+		concrete methods are nothing but normal methods with body
+	* all abtract methods must be redefined or overridded in sub class

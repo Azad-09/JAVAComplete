@@ -1,0 +1,410 @@
+Static Polymorphism
+====================
+	- A static polymorphism is the one where the program knows which method to be executed.
+
+	- So here compile time itself we know which method need to be called and accordingly the object will call that method and we can achieve the polymorphism.
+
+	- The example for static polymorphism is method overloading.
+
+Method Overloading
+==================
+	-  It is possible to write two or more methods with the same name provided their signatures are different. These methods are called as overloaded methods and the process is called method overloading.
+
+	- Signature include
+		- Number of Parameters
+			- int add(int,int);
+			-int add(int ,int ,int );
+		- Type of Parameters	
+			-int add(int var1,int var2);
+			-double add(double num1,double num2);
+		- Order of Parameters
+			-double add(int num1,double num2);
+			-double add(double num1,int num2);
+Note : Return type will not come under the signature.
+
+Demo Program
+===============
+
+public class Addition 
+{
+	public int add(int num1,int num2)
+	{
+		System.out.println("Two Integer Based Parameters");
+		return num1+num2;
+	}
+	
+	public int add(int num1,int num2,int num3)
+	{
+		System.out.println("Three Integer Based Parameter");
+		return num1+num2+num3;
+	}
+	
+	/*public double add(int var2,int num1) //Compile time Error as method is duplicate
+	{
+		return num1+var2;
+	}*/
+	
+	public String add(String s1,String s2)
+	{
+		System.out.println("String based");
+		return s1+s2;
+	}
+	
+	public double add(double v1,double v2)
+	{
+		System.out.println("Two double based Parameter");
+		return v1+v2;
+	}
+	
+	public static void main(String arg[])
+	{
+		Addition additionObj=new Addition();
+		
+		System.out.println("Addition Result:"+additionObj.add(101, 201));
+		System.out.println("Additon Result :"+additionObj.add(100, 200,300));;
+		System.out.println("Addition Result:"+additionObj.add(345.34, 899.45));
+		
+		System.out.println("Addition Result:"+additionObj.add("Suresh ", "Kumar"));
+	}
+}
+
+Output
+==============
+Two Integer Based Parameters
+Addition Result:302
+Three Integer Based Parameter
+Additon Result :600
+Two double based Parameter
+Addition Result:1244.79
+String based
+Addition Result:Suresh Kumar
+
+Constructor Overloading
+=======================
+- Like method overloading we can also overload the constructor. It means we can write multiple constructors in a particular class.
+
+- Whenever we want to create different kind of object from the same class we can use the constructor overloading.
+
+BoxOverload.java
+=================
+
+public class BoxOverload 
+{
+	double width;
+	double height;
+	double depth;
+	
+	public BoxOverload() //Default Box
+	{
+		width=10;
+		height=15;
+		depth=20;
+	}
+	
+	public BoxOverload(double val) //Square Box
+	{
+		width=height=depth=(val>0)?val:1;
+	}
+	
+	public BoxOverload(double w,double h,double d) //User Defined Box
+	{
+		width=(w>0)?w:1;
+		height=(h>0)?h:1;
+		depth=(d>0)?d:1;
+	}
+	
+	public double volume()
+	{
+		return width*height*depth;
+	}
+}
+
+BoxOverloadMain.java
+====================
+public class BoxOverloadMain 
+{
+	public static void main(String arg[])
+	{
+		
+		BoxOverload defaultBox=new BoxOverload();
+		
+		BoxOverload squareBox=new BoxOverload(10);
+		
+		BoxOverload userDefinedBox=new BoxOverload(10,11,14);
+		
+		
+		System.out.println("Volume of Default Box:"+defaultBox.volume());
+		System.out.println("Volume of Square Box:"+squareBox.volume());
+		System.out.println("Volume of User Defined Box:"+userDefinedBox.volume());
+		
+	}
+}
+
+This Keyword
+==============
+- When method scope variable and class scope variable are same then in the method scope it will always hide the class scope variable. To refer to the class scope variable from the method scope we need to use this keyword.
+
+public class ThisDemo 
+{
+	int var1;
+	
+	public ThisDemo(int var1)
+	{
+		this.var1=var1;
+	}
+	
+	public void display()
+	{
+		System.out.println(var1);
+	}
+	
+	public static void main(String arg[])
+	{
+		ThisDemo obj=new ThisDemo(100);
+		
+		obj.display();
+	}
+}
+
+Output
+===========
+100
+
+Other Usage of this keyword
+==========================
+- To call the other version constructor of the same class we need to use this keyword.
+
+public class BoxOverload 
+{
+	double width;
+	double height;
+	double depth;
+	
+	public BoxOverload() //Default Box
+	{
+		this(10,15,20);
+	}
+	
+	public BoxOverload(double val) //Square Box
+	{
+		this(val,val,val);
+	}
+	
+	public BoxOverload(double w,double h,double d) //User Defined Box
+	{
+		width=(w>0)?w:1;
+		height=(h>0)?h:1;
+		depth=(d>0)?d:1;
+	}
+	
+	public double volume()
+	{
+		return width*height*depth;
+	}
+}
+
+Constructors in Inheritance
+=========================
+- In an inheritance the constructor calling sequence will be from the base to derived. It means first the base class constructor will be called and then the derived class constructor gets executed.
+
+- Any version constructor [Default Constructor & Overloaded Constructor] of the derived class will call the default constructor of the base class.
+
+
+public class Demo1 {
+	public Demo1(){
+		System.out.println("I am in Default Constructor - Base Class");
+	}
+
+}
+public class Demo2 extends Demo1{
+	public Demo2(){
+		System.out.println("I am in Default Constructor - Derived Class");
+	}
+	public static void main(String arg[]){
+		
+		Demo2 objDemo2=new Demo2();
+		
+	}
+}
+
+Output
+=======
+I am in Default Constructor - Base Class
+I am in Default Constructor - Derived Class
+
+
+
+public class Demo1 {
+	
+	/*public Demo1()
+	{
+		System.out.println("I am in Default Constructor - Base Class");
+	}*/
+
+}
+public class Demo2 extends Demo1
+{
+	public Demo2()
+	{
+		System.out.println("I am in Default Constructor - Derived Class");
+	}
+	
+	public static void main(String arg[])
+	{
+		
+		Demo2 objDemo2=new Demo2();
+		
+	}
+}
+
+Output
+============
+I am in Default Constructor - Derived Class
+
+
+public class Demo1 {
+	
+	public Demo1()
+	{
+		System.out.println("I am in Default Constructor - Base Class");
+	}
+
+}
+
+public class Demo2 extends Demo1
+{
+	public Demo2()
+	{
+		System.out.println("I am in Default Constructor - Derived Class");
+	}
+	
+	public Demo2(int var1)
+	{
+		System.out.println("I am in Overlaoded Constructor - Derived Class");
+	}
+	
+	public static void main(String arg[])
+	{
+		
+		Demo2 obj1Demo2=new Demo2(); //Calling the Default Constructor 
+		
+		Demo2 obj2Demo2=new Demo2(100); //Trying to call the overloaded constructor of derived class
+		
+		
+	}
+}
+
+Output
+=========
+I am in Default Constructor - Base Class
+I am in Default Constructor - Derived Class
+I am in Default Constructor - Base Class
+I am in Overlaoded Constructor - Derived Class
+
+
+
+public class Demo1 {
+	
+	/*public Demo1()
+	{
+		System.out.println("I am in Default Constructor - Base Class");
+	}*/
+	
+	public Demo1(int num1)
+	{
+		System.out.println("I am in Overloaded Constructor - Base Class");
+	}
+
+}
+
+public class Demo2 extends Demo1
+{
+	public Demo2()
+	{
+		System.out.println("I am in Default Constructor - Derived Class");
+	}
+	
+	public Demo2(int var1)
+	{
+		System.out.println("I am in Overlaoded Constructor - Derived Class");
+	}
+	
+	public static void main(String arg[])
+	{
+		
+		Demo2 obj1Demo2=new Demo2(); //Calling the Default Constructor 
+		
+		Demo2 obj2Demo2=new Demo2(100); //Trying to call the overloaded constructor of derived class
+		
+		
+	}
+}
+
+- In the above scenario there is a compilation error as the Derived class constructor will try to call the default constructor of the base class, and in base class if it  does not have the default constructor hence it will lead to compilation error as java can't provide the default constructor to base class as it has already a parameterized constructor.
+
+Super Keyword
+==============
+- Super keyword is used when we want to call the overloaded constructor or parameterized constructor of the base class explicitely from the derived.
+
+
+public class Demo1 {
+	
+	/*public Demo1()
+	{
+		System.out.println("I am in Default Constructor - Base Class");
+	}*/
+	
+	public Demo1(int num1)
+	{
+		System.out.println("I am in Overloaded Constructor - Base Class");
+	}
+
+}
+
+public class Demo2 extends Demo1
+{
+	public Demo2()
+	{
+		super(10); //It will call the overloaded constructor of the base class
+		System.out.println("I am in Default Constructor - Derived Class");
+	}
+	
+	public Demo2(int var1)
+	{
+		super(var1); //It will call the overloaded constructor of the base class
+		System.out.println("I am in Overlaoded Constructor - Derived Class");
+	}
+	
+	public static void main(String arg[])
+	{
+		
+		Demo2 obj1Demo2=new Demo2(); //Calling the Default Constructor 
+		
+		Demo2 obj2Demo2=new Demo2(100); //Trying to call the overloaded constructor of derived class
+		
+		
+	}
+}
+
+Output
+=========
+I am in Overloaded Constructor - Base Class
+I am in Default Constructor - Derived Class
+I am in Overloaded Constructor - Base Class
+I am in Overlaoded Constructor - Derived Class
+
+Note : super keyword should be there as the first statement.
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

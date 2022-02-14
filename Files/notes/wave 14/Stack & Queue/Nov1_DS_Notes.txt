@@ -1,0 +1,267 @@
+Data
+
+Collection of Data
+
+1.Static Memory Allocation Ex: Array
+---fixed memory/arrange data(memory) in sequentially
+COns:: memory overflow/underflow
+
+
+2.Dynamic Memory Allocation Ex:LinkedList
+---not fixed/dynamically growable
+/arrange data(memory) in not sequentially(random)
+
+How to keep track of data in an order????(random)
+Answer: Linked List
+
+
+
+Node---Data+AddressofNextNode
+
+
+
+(1008)FirstNode----10/AddofSecondNode
+(1013)SecondNode----20/AddofThirdNode
+(1001)ThirdNode-----30/AddofFourthNode
+(1020)FourthNode----40/AddofFifthNode
+(1016)FifthNode-----50/Null
+
+
+Node n1=new Node();
+Node n2=new Node();
+Node n3=new Node();
+Node n4=new Node();
+Node n5=new Node();
+
+class Node
+{
+int rollno;
+Node n1;
+}
+
+class Node
+{
+Student s;
+Node n1;
+}
+
+class Student 
+{
+int rollno;String name;double mark;
+}
+
+
+
+
+
+class Node
+{
+Student s;
+Node next,prev;
+}
+
+10---->20---->30---->40---->50
+current
+start
+end
+
+
+10<----20<----30<---40<----50
+
+
+
+
+
+Data---Collection of Data
+
+Linked List------Organize my Data
+
+Stack----Last In First Out/ First In Last Out
+Examples:::plates, Undo, Back button of web browser, pile of Books(on a table),tabs on app,
+call log,
+
+printer---doc1,doc2,doc3---turn on printer
+
+
+Queue----First In First Out
+Examples:::Standing Queue,Online Orders,appointment,printer
+
+
+
+
+class Node
+{
+    int value;
+    Node next;
+}
+class Main
+{
+    Node Top;
+    Main(){ Top=null; }
+    public void push(int value)  //push(10)  push(20)  push(30)  push(40)
+    {
+     Node temp=Top;
+     Top=new Node();
+     Top.value=value;
+     Top.next=temp;
+    }
+    public int pop()
+    {          
+    Top=Top.next;    
+    }  
+    public void printValues()
+    {
+        Node temp=Top;
+        while(temp!=null)
+        {
+            System.out.print(temp.value+"\t"); //temp.studentobj.getRollno();
+            temp=temp.next;
+        }
+    
+         System.out.println();
+    }
+    public static void main(String[] args)
+    {
+       Main obj=new Main();
+       obj.push(10);
+       obj.push(20);
+       obj.push(30);
+       obj.push(40);
+       obj.printValues();
+        obj.pop();
+        obj.printValues();
+        obj.pop();
+        obj.printValues();
+    }
+}
+STACK-->40/1030----30/1020---20/1010---10/null
+
+Node n1=new Node();  //10
+n1.value=10;
+top=n1;
+----------------------------              20----->10
+Node n2=new Node(); //20
+n2.value=20;
+n2.next=top;
+top=n2;
+----------------------------              
+Node n3=new Node(); //30
+n3.value=30;
+n3.next=top;     //30---->20
+top=n3;       
+----------------------------              
+Node n4=new Node(); 
+n4.value=30;
+n4.next=top;    
+top=n4;  
+
+
+
+
+POP----Removal
+top=top.next();
+
+
+
+
+
+
+
+
+40---->30---->20---->10
+30---->20---->10
+20---->10
+10
+
+
+
+class Node
+{
+    int value;
+    Node next;
+}
+class Main
+{
+    Node Front,Rear;
+   Main()
+    {
+      Front=null;
+      Rear=null;
+    }
+      public void enqueue(int value) 
+      {
+           Node temp=Rear;
+           Rear=new Node();
+           Rear.value=value;
+           Rear.next=null;
+           if(Front==null){Front=Rear;}
+          else{ temp.next=Rear;}
+       
+   System.out.println(value+"----added");
+      }
+      public void dequeue()
+      {
+ Front = Front.next;
+ if (Front==null) 
+ {
+ Rear = null;
+ }
+ 
+     }
+     public void printQueue()
+     {
+ System.out.print("\nQueue = ");
+        Node ptr = Front;
+        while (ptr != null)
+        {
+            System.out.print(ptr.value+" ");
+            ptr = ptr.next;
+        }
+        System.out.println();        
+    }
+     
+
+    public static void main(String[] args)
+    {
+       Main obj=new Main();
+        obj.enqueue(10);obj.enqueue(20); obj.enqueue(30);obj.enqueue(40);
+        obj.printQueue();
+        obj.dequeue();
+        obj.printQueue();
+        obj.dequeue();
+        obj.printQueue();
+    }
+}
+
+
+
+
+
+Linked List   vs   Stack   vs   Queue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

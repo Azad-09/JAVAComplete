@@ -1,0 +1,56 @@
+swapNumber(int num)    // num = 789635 (even digits)
+
+variables::
+result = 0;
+place = 1;
+
+funct::
+if(789635 > 0)
+while(789635 > 0){
+
+DRY RUN ::
+
+result = result + (place * 10 * (num % 10));
+// result = 0 + (1 * 10 *(789635 % 10)) =  5 * 10 = 50;
+
+num = num / 10;
+// num = 789635 / 10 = 78963;
+
+result = result + (place * (num % 10));
+// result = 50 + (1 * (78963 % 10)) = 53;
+ 
+num = num / 10;
+// num = 78963 / 10 = 7896;
+
+place = place * 100;
+// place = 1 * 100 = 100;
+
+}
+
+return result + (place * num);
+//  53 + (100 * 7896) = 789600 + 53 = 789653
+
+
+
+DRY RUN 2 :: (789635)
+
+1. result = 50;
+2. num = 78963;
+3. result = 53;
+4. num = 7896;
+5. place = 100;
+
+return --> 789653;
+
+
+1. result = 60;  // 0 + (60)
+2. num = 789;
+3. result = 69;  // 60 + (9) 
+4. num = 78;
+5. place = 100; 
+
+return --> 7869;
+
+1. result = 0 = 
+
+

@@ -1,0 +1,41 @@
+BEGIN (123)
+
+    READ num
+    one = num % 10
+    tens = (num / 10)
+    hund = (tens / 10)
+
+    IF one > tens
+        IF one > hund
+        WRITE "One is greatest"
+        ELSE 
+        WRITE "Hundread is greatest "
+    ELSE IF tens > hund
+    WRITE "Tens is greatest"
+    ELSE
+    WRITE "Hundread is greatest"
+
+END 
+BEGIN (Prime)
+
+    READ num
+    IF num % 2 = 0 or num = 2
+    WRITE "It is not a Prime Number"
+    ELSE
+    WRITE "It is a Prime Number"
+
+END
+
+BEGIN (Stars)
+
+   FOR(i = 0; i<= 3; i++)
+   FOR(j = 0 ; j<= i; j++)
+   WRITE "*"
+   PRINT of "/n"
+ 
+END
+
+
+
+
+link - https://www.youtube.com/watch?v=0z28J0RfaJM

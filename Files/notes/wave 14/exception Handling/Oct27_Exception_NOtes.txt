@@ -1,0 +1,213 @@
+Applications---Updates
+
+???
+
+New Features
+Fixing a bug
+
+Facebook
+Facebook Bug community
+
+Whatsapp--application works fine
+------memory
+------contacts
+------mike/voice
+------camera
+
+
+
+Errors:::
+1.Compile time Errors--Syntax Errors
+2.Logical Errors
+3.Run time Errors--Exception Handling
+
+
+1.Compile time Errors--Syntax Errors
+---Errors Occurs based on language
+keyword misspelled, missed ; ,{ },function para not passed
+
+int totalMarks;
+totalmarks=100;
+
+System
+
+Test----compilation Error------Test failure
+
+Expected : 10  Actual  5
+
+2.Logical Errors
+SDLC phases
+Car manufacturing/Develop an application
+
+Analysis-----------------------Design------------------Implement------Testing------Deploy---Maintainence
+
+requirement collecting-----blueprint(UML diagram)--------coding--------Test cases----launch---updates
+
+
+3.Runtime Errors(Exception)
+Unexpected closure/Terminating
+Due to hardware / any other software not responding
+
+
+Its duty of us to handle compile time eror(avoid)--logical errors-----handle run time error
+
+
+Exception Handling::
+Java--OOPS----API---Class or  Interfaces--methods
+
+try
+catch
+finally
+throw
+throws
+try-with-resources
+
+
+
+
+
+
+
+
+Whatsapp----using---sending msg/receiving msg----Normal Flow
+
+
+
+
+Whatsapp----using--Out of phone Memory------Disrupts---WORK
+
+indicates Error msg------Memory is full, we cant do sending.receving msg..pls free up some memory
+
+
+
+Whatsapp----Voice call---dont have network------Disrupts---WORK
+
+indicates Error msg----no network, pls check your machine connection
+
+
+
+
+Exception in Java::
+Checked Exception---Compile time Exception
+Example:::IO package/SQL package
+
+Handled in program using try/catch  or  throws keyword
+
+
+
+UNChecked Exception---Run time Exception
+Example::NullpointerException/ArrayIndexOutofBoundsException
+/ArithmeticException/ClasscastException/NumberFormatException
+
+
+Handled in program using try/catch
+
+
+
+Example of CHecked Exception:
+import java.io.*;
+class HelloWorld {
+       public static void main(String[] args) {
+        try
+        {
+        File f=new File("Student.txt");
+       f.createNewFile();
+        }
+        catch(IOException e)
+        {
+            System.out.println("my error message");
+            System.out.println(e);
+        }
+        }
+}
+
+Example of CHecked Exception:
+import java.io.*;
+class HelloWorld {
+       public static void main(String[] args) throws IOException
+       {
+                File f=new File("Student.txt");
+                f.createNewFile();
+               
+        
+        }
+}
+
+Example of UNCHecked Exception:
+class HelloWorld {
+       public static void main(String[] args)
+       {
+           try
+           {
+            int[] no={10,20,30};
+              System.out.println(no[0]);
+              System.out.println(no[1]);
+              System.out.println(no[2]);
+              System.out.println(no[3]);//Run time error
+               System.out.println(no[4]);
+           }
+            catch(ArrayIndexOutOfBoundsException e)
+           {
+               System.out.println("Index out of range");
+                System.out.println(e);
+           }
+        }
+}
+
+
+
+class HelloWorld {
+       public static void main(String[] args)
+       {
+           try
+           {
+              System.out.println(5/0);
+              int[] no={10,20,30};
+              System.out.println(no[0]);
+              System.out.println(no[1]);
+              System.out.println(no[2]);
+              System.out.println(no[3]);//Run time error
+               System.out.println(no[4]);
+           }
+           catch(ArrayIndexOutOfBoundsException e)
+           {
+               System.out.println("Index out of range");
+                System.out.println(e);
+           }
+           catch(ArithmeticException e)
+           {
+               System.out.println("Divide by zero");
+                System.out.println(e);
+           }
+        }
+}
+
+
+
+
+class HelloWorld {
+       public static void main(String[] args)
+       {
+           try
+           {
+              System.out.println(5/5);
+              int[] no={10,20,30};
+              System.out.println(no[0]);
+              System.out.println(no[1]);
+              System.out.println(no[2]);
+              System.out.println(no[3]);//Run time error
+               System.out.println(no[4]);
+           }
+           catch(Exception e)
+           {
+                System.out.println(e);
+           }
+        }
+}
+
+
+
+
+
+
+

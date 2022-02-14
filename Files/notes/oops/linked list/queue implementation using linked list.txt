@@ -1,0 +1,145 @@
+Queue Implementation
+========================
+public class MyNode 
+{
+	//data part
+	int data;
+	
+	//Self referential pointer| object reference which will contain next node address
+	MyNode next;
+	
+	public MyNode(int data)//Parameterized Constructor 
+	{
+		this.data=data;
+		next=null;
+	}
+	
+	public int getData()
+	{
+		return data;
+	}
+}
+
+import java.util.Scanner;
+
+public class Queue {
+
+	MyNode front,rear;
+	
+	public Queue()
+	{
+		front=rear=null;
+	}
+	
+	public void insertElement()
+	{
+		int data;
+		
+		Scanner scannerObj=new Scanner(System.in);
+		System.out.println("Enter Value to Node:");
+		data=scannerObj.nextInt();//10
+		//Allocate memory for the new node
+		//Assign value to the data field of the new node
+		//Make the next field of the new node point to NULL
+		MyNode newNode=new MyNode(data);
+		
+		//If the queue is empty, execute the following steps:
+		//Make FRONT point to the new node
+		//Make REAR  point to the new node
+		if(front==null)
+		{
+			front=rear=newNode;
+			return;
+		}
+		//Make the next field of the REAR variable point towards the new node
+		rear.next=newNode;
+		//Make REAR point to the new node
+		rear=newNode;
+	}
+	
+	public void traversal()
+	{
+		//Create a temporary node reference called temp;
+		//Assign the front node to temp;
+		
+		//move the temp node till it becomes null
+		//display the temp node's data
+		//make the temp node's next address to be assigned to temp
+		
+		System.out.println();
+		
+		for(MyNode temp=front;temp!=null;temp=temp.next)
+		{
+			System.out.print(temp.getData()+"\t");
+		}
+		
+		System.out.println();
+		
+		/*MyNode temp=front;
+		while(temp!=null) {
+			System.out.print(temp.getData()+"\t");
+			temp=temp.next;
+		}*/
+		
+	}
+	
+	public void deleteElement()
+	{
+			//If the queue is empty: // FRONT = NULL
+			//Display “Queue empty”
+			//Exit
+		
+			if(front==null)
+			{
+				System.out.println("Queue is Empty");
+				return;
+			}
+			
+			//Make the node marked FRONT as current
+			MyNode current;
+			current=front;
+			//Make FRONT point to the next node in sequence
+			front=front.next;
+			//Release memory for the node marked as current
+			current=null;
+	}
+	
+}
+
+import java.util.Scanner;
+
+public class QueueImpl 
+{
+	public static void main(String arg[]) {
+		
+		char choice;
+		
+		Queue queueObj=new Queue();
+		
+		do
+		{
+			System.out.println("Enter the Operation 1. Insert   2.Display   3.Delete");
+			choice=new Scanner(System.in).next().charAt(0);
+			
+			switch(choice) {
+			case '1':
+				queueObj.insertElement();
+				break;
+			case '2':
+				queueObj.traversal();
+				break;
+			case '3':
+				queueObj.deleteElement();
+				break;
+			default:
+				System.out.println("Invalid Choice");
+			}
+			
+			System.out.println("Do You Wish to Continue (Y/N)::");
+			choice=new Scanner(System.in).next().charAt(0);
+			
+		}while(choice=='Y');
+		
+		
+	}
+}

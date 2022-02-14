@@ -1,0 +1,158 @@
+java.lang package----
+Throwable class
+
+Exception class
+
+RUntimeException class
+--NumberFormatException class
+--NullPOinterException class
+--ArrayIndexOutOfBoundsException class
+--ArithmeticException class
+etc.,
+
+IOException
+--FileNotFoundException class
+
+SQLException
+
+Above all falls under BuildIN Exception(Systemdefined Exception)
+
+
+
+
+UserDefined Exception(Custom Exception)
+
+age>=18
+marks<=100
+balance should not be negative
+
+
+According to req of application if we want to throw an exception for above cases, 
+we dont have predefined exception class so we want to create our own exception
+
+
+
+1.Create an Exception------create a class extends Exception/RuntimeException
+2.Raise an Exception-----------throw keyword
+
+
+
+
+
+
+
+
+
+
+CHecked vs Unchecked Exception
+throw vs throws
+finally vs trywithresources
+
+
+
+
+Example for USer defined Exception::::
+
+import java.util.*;
+class Demo1
+{
+public static void main(String[] args)
+{
+Scannner sc=new Scanner(System.in);
+System.out.println("ENter a Number");
+int no=sc.nextInt();
+Demo1 obj=new Demo1();
+System.out.println(obj.validateNumber(no));
+}
+public String validateNumber(int x)
+{
+String result="";
+try
+{
+if(x>=10){ result= "Valid Number";  }
+else  { throw new NumberValidException123(); }
+}
+catch(NumberValidException123 e)
+{
+result=e.toString();
+}
+return result;
+}
+}
+
+class NumberValidException123 extends Exception
+{
+public String toString(){  return "DOnt enter a Number less than 10";  }
+}
+
+
+
+
+
+
+
+
+
+
+Example for USer defined Exception::::
+
+import java.util.*;
+class Demo1
+{
+public static void main(String[] args)
+{
+Scannner sc=new Scanner(System.in);
+System.out.println("ENter a Number");
+int no=sc.nextInt();
+Demo1 obj=new Demo1();
+System.out.println(obj.validateNumber(no));
+}
+public String validateNumber(int x) throws NumberValidException123
+{
+if(x>=10){ return "Valid Number";  }
+else  { return throw new NumberValidException123().toString(); }
+}
+}
+
+class NumberValidException123 extends Exception
+{
+public String toString(){  return "DOnt enter a Number less than 10";  }
+}
+
+
+
+
+
+
+
+
+
+public String validateNumber(int x) throws NumberValidException123
+{
+if(x>=10){ return "Valid Number";  }
+else  { throw new NumberValidException123("DOnt enter a Number less than 10"); }
+}
+}
+
+public String validateNumber(int x)
+{
+String result="";
+try
+{
+if(x>=10){ result= "Valid Number";  }
+else  { throw new NumberValidException123(); }
+}
+catch(NumberValidException123 e)
+{
+result=e.toString();
+}
+return result;
+}
+}
+
+
+
+
+
+
+

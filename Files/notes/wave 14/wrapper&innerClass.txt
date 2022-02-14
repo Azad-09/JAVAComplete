@@ -1,0 +1,339 @@
+Games/Sports
+
+Players 
+-----name,age,score
+
+
+
+class Players
+{
+private String name;
+private int age,score;
+Players(String name,int age,int score)
+{
+this.name=name;
+this.age=age;
+this.score=score;
+}
+public String getName(){return name;}
+public int getAge(){return age;}
+public int getScore(){return score;}
+}
+
+main()
+{
+Players p1=new Players("Arun", 24,89);
+}
+
+
+
+
+
+Wrapper class-----
+Primitive data type to objects type
+
+
+
+Watch--100 rs
+Branded Watch--5000rs
+
+
+int i=10;    //Primitive data type
+
+Integer j=new Integer(20);  //Wrapper class/object/reference type
+
+
+
+NOte::
+ i is a variable that holds a value
+ j is an object type that holds reference to an object
+
+Java-----Partial OOPS language
+because java supports primitive data type
+
+
+
+int x=100;
+Integer y=new Integer(x);//Boxing
+
+Integer z=x;//AutoBoxing--dont use ---side effects
+
+int k=y;//Error
+
+int k=y.intValue();//Unboxing
+
+
+
+
+Type Casting---Convert one data type to another of same group
+Implicit Casting and Explicit Casting
+
+TYpe COnversion----Convert one data type to another of different group
+
+Type Casting::
+Integer Group---   byte----short------int-------long
+Floating Group---- float-------double
+
+byte b=10;
+int i=100;
+long l=1000L;
+l=b;  //valid--Implicit casting
+l=i;   //valid--Implicit casting
+i=b;  //valid--Implicit casting
+b=(byte)l;   //Requires  Explicit Casting
+i=(int)l;    //Requires  Explicit Casting
+b=(byte)i;    //Requires  Explicit Casting
+
+
+float f=10.2f;
+double d=22.4;
+
+f=(float)d;  //Requires  Explicit Casting
+d=f;  //implicit casting
+
+
+
+
+TYpe COnversion
+int 
+char
+float
+String
+boolean---true/false
+
+int----char
+
+int i=100;
+char c=(int)i; //d    casting
+
+int------float
+i=(int)f;   //casting
+
+
+int i=100;
+String s="200";
+
+i=s;//error
+s=i;//error
+
+boolean b=false;
+String s1="true"; 
+
+i=Integer.parseInt(s);
+f=Float.parseFloat(s);
+
+s=String.valueOf(i);
+s=String.valueOf(j);
+
+b=Boolean.parseBoolean(s1);
+s1=String.valueOf(b);
+
+
+
+Object Casting::::RUlE-----Inheritance relationship
+Upward Casting
+Download Casting
+
+
+class A
+{}
+class B extends A
+{}
+
+A a1=new A();
+B b1=new B();
+
+a1=b1;//valid---upward casting
+b1=(B)a1; //downward Casting
+
+A  a2=new B();  //polymorphic object
+
+A a3=a2;
+B b3=(B)a2;
+
+
+
+
+
+
+
+String s1=new String("hello");
+String s2=new String("hai");
+String s3=new String("hello");
+
+
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(s1==s3);
+System.out.println(s1.equals(s3));
+
+Reference type---Array/String/userdefined class
+
+==      compares object memory
+equals  compares values
+
+
+book.getGenre()=="Fiction"   //invalid
+
+book.getGenre().equals("Fiction")  //valid
+
+
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+String s1="hello";
+String s2="hai";
+String s3=s1;
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(s1==s3);
+System.out.println(s1.equals(s3));
+    }
+}
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+String s1="hello";
+String s2="hello";
+String s3=s1;
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(s1==s3);
+System.out.println(s1.equals(s3));
+    }
+}
+
+
+
+
+
+
+//Nested class
+class Employee     //Outer class
+{
+
+class Department     //Inner class
+{
+}
+
+}
+
+
+
+Types:
+1.Regular Inner class(Nested)
+2.Static Inner class(Nested---static)
+3.Method Local Inner class(inside method)
+4.ANonymous Inner class
+
+class Employee     //Outer class
+{
+class Department     //Regular Inner class
+{int deptcode=501;}
+static class Salary     //Static Inner class
+{int pf=2500;}
+void disp()
+{
+class Project  //Method-Local Inner class
+{ int pcode=701;}
+Project p1=new Project();
+System.out.println(p1.pcode);
+}
+public Object obj=new Object() //Anonymous Inner class
+{
+};
+}
+main()
+{
+Employee e1=new Employee();
+Employee.Department d1=e1.new Department();  System.out.println(d1.deptcode);
+Employee.Department d2=new Employee().new Department();
+Employee.Salary s1=new Employee.Salary();  System.out.println(s1.pf); 
+}
+
+
+All java class extends from Object class
+
+Static  Vs non-Static
+
+
+class Person
+{
+int pid;
+static String pname;
+}
+
+
+Person.pname="Jivan";
+new Person().pid=1001;
+
+
+
+
+
+
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+String s1="hello";
+String s2="hello";
+String s3=s1;
+System.out.println(s1==s2);
+System.out.println(s1.equals(s2));
+System.out.println(s1==s3);
+System.out.println(s1.equals(s3));
+    }
+}
+
+Above example for Predefined type i.e String
+
+We will apply equals method to USer defined Type i.e Class
+//Override Equals method
+
+class Student
+{
+String name;
+int mark,age;
+Student(String name,int mark,int age)
+{
+this.name=name;
+this.mark=mark;
+this.age=age;
+}
+public boolean equals(Object obj)
+{
+if(!(obj instanceof Student))
+{  return false;  }
+Student s5=(Student)obj;
+return (name.equals(s5.name) &&  (age==s5.age)  && (mark==s5.mark))   ;
+}
+}
+class Demo1
+{
+public static void main(String[] args) {
+Student s1=new Student("Eka",89,23);
+Student s2=new Student("Eka",89,23);
+System.out.println(s1==s2);System.out.println(s1.equals(s2));//not possible
+Boolean b=s1.equals(s2);
+System.out.println(b);
+}
+}
+
+
+
+
+Wrapper class--boxing---unboxing---equals
+
+inner class
+
+
+
+Home Assignment:: Object class--root class of all java(parent)
+Object non-final methods--Override-----toString()/equals()/hashcode()
+
+
+
+

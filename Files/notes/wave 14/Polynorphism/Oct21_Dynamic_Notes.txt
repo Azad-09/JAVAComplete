@@ -1,0 +1,364 @@
+Features of OOPS:::
+1.Encapsulation
+2.Abstraction
+3.Inheritance
+4.Polymorphism
+
+Static Polymoprhism:::
+
+Method Overloading:::Defining many methods with same name but with diff no of
+args in a class is called as method overloading
+
+Dynamic Polymoprhism:::
+
+Method Overridding::: redefine a method of parent class in child class is called 
+as method overridding
+
+child class should have parent method with same name with same args and return type
+
+
+class A
+{
+public void fun(){System.out.println("inside A fun");
+}
+class B extends A
+{
+public void fun(){System.out.println("inside B fun");  //overridding
+}
+class C extends A
+{
+public void fun(){System.out.println("inside C fun");  //overridding
+}
+class HelloWorld 
+{
+public static void main(String[] args) 
+{
+B b1=new B(); b1.fun();
+C c1=new C(); C1.fun();
+}
+}
+
+
+
+
+A person-----Permanent/Temp emp
+
+
+
+
+Shapes class------>Square class,Rectangle class,Circle class
+(height,color)-----area----------breadth---------area,
+
+
+mobile phone,TV,Door,WIndow---->Object of which shapes--->Rectangle class
+things---->table fan------circle shape
+
+
+
+What is Dynamic Poly/Method Overridding
+----Define parent class methods in child class
+--implemented @ run time
+
+
+Why is Dynamic Poly/Method Overridding
+
+
+
+
+class A
+{
+public void fun(){System.out.println("inside A fun");}
+}
+class B extends A
+{
+public void fun(){System.out.println("inside B fun");}  //overridding
+}
+class C extends A
+{
+public void fun(){System.out.println("inside C fun");  //overridding
+}
+}
+class Demo1
+{
+public static void main(String[] args) 
+{
+A a1=new B();//polymorphic object
+a1.fun();
+A a2=new C();//polymorphic object
+a2.fun();
+}
+}
+
+
+
+University----------->college1,college2,college3(sibiling classes)
+CBSE board---------->school1,school2,school3,school4
+
+---------------Below is an Example for Inheritance------------
+class University
+{
+void syllabus(){}
+void semester(){}
+void placement(){}
+void fee(){}
+}
+class college1 extends University
+{
+void sportsclub(){}
+}
+class college2 extends University
+{
+void NCC(){}
+}
+class college3 extends University
+{
+}
+
+
+
+
+---------------Below is an Example for Method Overridding------------
+class University
+{
+void syllabus(){System.out.println("UNIV syllabus");}
+void semester(){System.out.println("UNIV semester");}
+void placement(){System.out.println("UNIV Placement");}
+void fee(){System.out.println("UNIV fee");}
+}
+class college1 extends University
+{
+void placement(){System.out.println("College1 Placement");}   //Redefine---Override
+void fee(){System.out.println("College1 fee");}
+}
+class college2 extends University
+{
+void placement(){}
+void fee(){}
+}
+class college3 extends University
+{
+void placement(){System.out.println("College3 Placement");}   //Redefine---Override
+void fee(){System.out.println("College3 fee");}
+}
+class Demo1
+{
+public static void main(String[] args) 
+{
+college1 student1=new college1();
+student1.syllabus();student1.semester();student1.placement();student1.fee();
+college3 student2=new college3();
+student2.syllabus();student2.semester();student2.placement();student2.fee();
+}
+}
+
+OUTPUT:::
+UNIV syllabus
+UNIV semester
+College1 Placement
+College1 fee
+UNIV syllabus
+UNIV semester
+College3 Placement
+College3 fee
+
+Who is an object for above example???? Students----29 students
+
+
+
+
+
+
+
+class A
+{
+final void fun(){}
+}
+class B extends A
+{
+void fun(){}
+}
+
+
+POints to remember in Method Overridding
+1.no private members of parent class
+2.no final members can be override
+3.override method should have equal or higher privilege than overridden method
+
+public >protected> default
+
+class A
+{
+public void fun(){}  //overridden
+}
+class B extends A
+{
+void fun(){}  //override
+}
+
+
+//public>>>protected>>private
+class A
+{
+protected void fun(){}  //overridden
+}
+class B extends A
+{
+_________ void fun(){}  //override
+}
+
+if overridden method is protected, i can have override as protected or public
+
+
+class Bank
+{
+String Bankname,ifsicode;
+Bank(String Bankname,String ifsicode)
+{
+this.Bankname=Bankname;
+this.ifsicode=ifsicode;
+}
+public double interestCalc(){}
+}
+class ICICIbank extends Bank
+{
+ICICIbank(String Bankname,String ifsicode)
+{
+super(String Bankname,String ifsicode);
+}
+public double interestCalc(){}
+}
+class HDFCbank extends Bank
+{
+HDFCbank(String Bankname,String ifsicode)
+{
+super(String Bankname,String ifsicode);
+}
+public double interestCalc(){}
+}
+class Demo2
+{
+public static void main(String[] args) 
+{
+ICICIbank obj=new ICICIbank("ICICI","icic00001");
+HDFCbank obj=new HDFCbank("HDFC","hdfc00001");
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+abstract class Bank
+{
+public abstract double interestCalc();
+public void enquiry(){}
+}
+class ICICIbank extends Bank
+{
+public double interestCalc(){}
+}
+class HDFCbank extends Bank
+{
+public double interestCalc(){}
+}
+
+Points:::(Important)
+1.Abstract class contains regular methods and abstract methods
+2.Abstract method doesnot have body
+3.Abstract method has to override in child class
+3.Abstract class always act like parent class , so we cant create object for abstract class
+4.we can only create POlymorphic object
+5.DONT make abstract method as private or final
+6.Override method should have higher privileages
+
+Bank obj=new Bank();//Error
+
+
+
+
+---------------Below is an Example for Abstract class------------
+abstract class University
+{
+void syllabus(){System.out.println("UNIV syllabus");}
+void semester(){System.out.println("UNIV semester");}
+abstract void placement();
+abstract void fee();
+}
+class college1 extends University
+{
+void placement(){System.out.println("College1 Placement");}   //Redefine---Override
+void fee(){System.out.println("College1 fee");}
+}
+class college2 extends University
+{
+void placement(){}
+void fee(){}
+}
+class college3 extends University
+{
+void placement(){System.out.println("College3 Placement");}   //Redefine---Override
+void fee(){System.out.println("College3 fee");}
+}
+class college4 extends University
+{
+//override placement and fee
+}
+abstract class college5 extends University
+{
+}
+class Demo1
+{
+public static void main(String[] args) 
+{
+college1 student1=new college1();
+student1.syllabus();student1.semester();student1.placement();student1.fee();
+college3 student2=new college3();
+student2.syllabus();student2.semester();student2.placement();student2.fee();
+}
+}
+
+
+
+Interactive Demo:::Games
+
+1.Play game
+2.Calc Score
+3.Display Score
+4.Exit the game
+
+
+Badminton    Table tennis   Chess
+
+
+Abstract class/Abstract methods 
+Regular Concrete Methods
+Child class
+
+Main class--main method---obj/fun
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

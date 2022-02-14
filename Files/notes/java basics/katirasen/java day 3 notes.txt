@@ -1,0 +1,107 @@
+class Prog{
+	public static void main(String a[])
+	{
+
+		int id;
+		String name;
+		char grade='A';
+		
+		Scanner sc=new Scanner(System.in);
+		id=sc.nextInt();
+		name=sc.next();
+		
+		System.out.println("your id is : "+id);
+		System.out.println("your name is : "+name);
+		
+	}
+}
+
+syntax : methods
+
+	returntype(datatype(int,float,boolean)) Methodname(){
+
+	}
+
+
+	void Methodname(){
+	
+	}
+
+
+
+main()---> m1()--->m2()---> m3()
+
+
+
+	m3
+	m2
+	m1
+	main
+stack
+
+
+
+static - class , non static - object
+
+
+class Student{
+		studId;
+		courseName;
+		InstitutaionName;
+		studName;
+	
+}
+
+10 stud - 10 objects
+
+rule:
+======
+
+	 will attributes have same value for all objects? NOT ALWAYS but for few cases
+ 	 ensure that they are created inside the class
+	for static variable check it has a static keyword attached to it 
+	non-static should not have the static keyword
+
+
+
+diff static var and non-static var?
+
+
+class ==> Objects ==> Attributes
+
+classRoom ==> Students ==> stdID, courseName etc (attributes)
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,266 @@
+Real World Objects
+
+
+Class
+Class Members
+--variables
+--functions
+
+Objects of class
+
+
+Features of OOPS::::
+1.Encapsulation
+2.Abstraction
+3.Inheritance
+4.Polymorphism
+
+Encapsulation----Hiding the irrelvant details
+Abstraction---Showing the relevant details
+
+Human Body
+Digital Wallet
+Smart Speaker
+
+class Address
+{
+int streetno,pincode;
+String cityname,state;
+}
+class Employee
+{
+int empid,age;
+String empname;
+double salary;
+Address address;
+double calculateSalaryhike(double hikepercentage)
+{
+return salary*hikepercentage/100;
+}
+}
+class Object_Demo
+{
+public static void main(String[] args)
+{
+Address addobj1=new Address();//decl & init
+Address addobj2;             //decl
+addobj2=new Address();      //init
+Employee empobj1=new Employee();
+Employee empobj2=new Employee();
+}
+}
+
+
+
+
+
+class Student
+{
+int sid,marks;
+String name;
+Student()
+{
+}
+void calcTotalMarks()
+{}
+}
+
+
+Constructor:::Special Method
+----same name as classname
+-----no return type
+-----no explicit call, automatically called when we are creating objects
+
+
+
+
+
+class Student
+{
+int sid,mark1,mark2;  String name;
+Student()
+{
+    System.out.println("inside Student Constructor");
+}
+void calcAverageMarks()
+{ 
+    System.out.println("Sid--"+sid +"\t--Sname  "+name);
+    System.out.println("Average Marks--"+(mark1+mark2)/2);
+}
+}
+class HelloWorld {
+   
+    public static void main(String[] args) {
+        System.out.println("Hello World, happy programming!"); 
+        Student Sobj1=new Student();
+        Sobj1.sid=1001;
+        Sobj1.mark1=89;Sobj1.mark2=92;
+        Sobj1.name="Eka";
+        Student Sobj2=new Student();
+        Sobj2.sid=1002;
+        Sobj2.mark1=65;Sobj2.mark2=74;
+        Sobj2.name="Vishnu";
+         Sobj1.calcAverageMarks();
+         Sobj2.calcAverageMarks();
+        }
+}
+
+
+POint 1: using object and init values to all class members---time consuming
+POint 2: we cannot use data members outside the class--Overrules concept of encapsulation
+POint 3: we have to use only functions outside the class
+
+
+
+Above 3 points served using Para cons
+
+class Student
+{
+int sid,mark1,mark2;  String name;  //class members--data members
+Student(int sid,int mark1,int mark2,String name)    //important //para constructor
+{
+   this.sid=sid;
+   this.mark1=mark1;
+   this.mark2=mark2;
+   this.name=name;
+}
+void calcAverageMarks()
+{ 
+    System.out.println("Sid--"+sid +"\t--Sname  "+name);
+    System.out.println("Average Marks--"+(mark1+mark2)/2);
+}
+}
+class HelloWorld {   
+    public static void main(String[] args) {
+        System.out.println("Hello World, happy programming!"); 
+        Student Sobj1=new Student(1001,89,92,"Eka");  //important
+        Student Sobj2=new Student(1002,67,74,"Vishnu");
+        Student Sobj3=new Student(1003,61,76,"Vaibhav");
+         Sobj1.calcAverageMarks();  //important
+         Sobj2.calcAverageMarks();
+        Sobj3.calcAverageMarks();
+        }
+}
+
+
+
+17.1------->18.1
+
+Bookstore class----Book class------Author class------variables and para constructor
+(Diagram)-----------------------------------------Create java files
+
+Explore::
+this
+constructor
+default constructor
+no-arg constructor
+Para constructor
+
+
+
+Static   VS    Final
+
+
+
+
+class Address
+{
+    int doorno,pincode;
+    String streetname,city,state;
+    public Address(int doorno,String streetname,String city,String state,int pincode)
+    {
+        this.doorno=doorno;
+        this.streetname=streetname;
+        this.city=city;
+        this.state=state;
+        this.pincode=pincode;
+    }
+    public void disp_Address()
+    {
+        System.out.println("Doorno---"+doorno+"----Streetname--"+streetname+"--city--"+city+"---state--"+state+"-pincode---"+pincode);
+    }
+}
+
+class Employee
+{
+  int empid,age,salary;
+  String empname;
+  Address addr;
+public Employee(int empid,String empname,int age,int salary,Address addr)
+{
+    this.empid=empid;
+    this.empname=empname;
+    this.age=age;
+    this.salary=salary;
+    this.addr=addr;
+}
+public int getSalary()
+{
+    return salary+calcHikeSalary(25);
+}
+public int calcHikeSalary(int hikepercentage)
+{
+    return salary*hikepercentage/100;
+}
+}
+
+class StartupOrganization
+{
+    String Organizationname;
+    Address add;
+    Employee[] employees;
+    public StartupOrganization( String Organizationname,Address add,Employee[] employees)
+    {
+        this.Organizationname=Organizationname;
+        this.add=add;
+        this.employees=employees;
+    }
+  public void disp_OrganizationDetails()
+   {
+     System.out.println("Organization Name--"+Organizationname);  
+   }
+   public void disp_Address()
+   {
+    System.out.println("Organization Address");
+    System.out.println("Doorno---"+add.doorno+"----Streetname--"+add.streetname+"--   city--"+add.city+"---state--"+add.state+"-pincode---"+add.pincode);
+
+   }
+    public String[] getEmpdetails()
+    {
+   String[] tempnames=new String[employees.length];
+   for(int i=0;i<tempnames.length;i++)
+   {
+      tempnames[i]=employees[i].empname;
+   }
+   return tempnames;
+    }
+}
+
+
+class App
+{
+    public static void main(String[] args)
+     {
+         Address emp1address=new Address(15,"XYZ street","Chennai","TN",600001);
+        Employee emp1=new Employee(501,"Akash",25,45000,emp1address);
+        Address emp2address=new Address(22,"M S street","Kolkata","WB",500001);
+        Employee emp2=new Employee(502,"Anagha",24,37000,emp2address);
+        Address emp3address=new Address(71,"A B street","Bangalore","KA",700001);
+        Employee emp3=new Employee(503,"Arun",22,34000,emp3address);
+        emp1address.disp_Address();  emp2address.disp_Address();
+        emp3address.disp_Address();
+        System.out.println("EMP1 Salary--"+emp1.getSalary());
+        System.out.println("EMP2 Salary--"+emp2.getSalary());
+        System.out.println("EMP3 Salary--"+emp3.getSalary());
+         Address orgaddress=new Address(267,"AAA street","Gurgaon","HA",123456);
+        Employee[] e1=new Employee[]{emp1,emp2,emp3};
+       StartupOrganization obj=new StartupOrganization("NIIT",orgaddress,e1);
+       obj.disp_OrganizationDetails();
+        obj.disp_Address();
+     String[] array=obj.getEmpdetails();
+    for(String x: array)
+    {
+     System.out.println(x);
+     }
+    }
+}

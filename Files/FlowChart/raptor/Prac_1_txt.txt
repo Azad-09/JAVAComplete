@@ -1,0 +1,234 @@
+1.1
+
+Start
+
+Declare totdays, attend, percent
+
+Accept value of totdays and attend
+
+Assign the percent by dividing attend by totdays multiplied by 100
+
+If the percent is greater than or equal to 75
+
+Display the student is eligible for the exam 
+
+Else 
+
+Display the student is not eligible
+
+Stop 
+
+PseudoCode
+
+BEGIN 
+
+  READ value of totdays and attend
+  INIT percent to 1 
+  percet = percent * 100 * totdays / attend
+  IF percent >= 75
+  WRITE "You are eligible "
+  ELSE
+  WRITE "You are not eligible"
+ 
+END
+
+-------------------------------------------------------------------------
+
+1.2
+
+START
+step1: Declare num and sum
+step2: Accept the value of num
+step3: Initialise sum to 0 
+step3: Split the number
+step4: Find the cube of each digit 
+step5: Add the cube of each digit to sum
+step6: If the value of sum is equalto num then it is an Armstrong number
+step7: Else it is not an armstrong number
+
+
+PseudoCode (Armstrong)
+
+BEGIN
+     READ num
+     temp = num
+     sum = 0
+     WHILE num >= 10
+            sum = sum + (num%10) + (num%10) + (num%10)
+            num = num /10
+     ENDWHILE
+
+IF sum === temp
+    WRITE "It's an Armstrong Number"
+
+ELSE
+    WRITE "It's not an Armstrong Number"
+     
+     
+END
+
+-------------------------------------------------------------------------
+1.3
+
+Start 
+
+Declare age
+
+Accept the value of age
+
+If the value of age is less than 13 
+
+Display patient is a child
+
+else  
+   
+    Check if age is more than 13 and less than 20
+
+       Display Teenager
+   
+      Else 
+  
+        Display Adult
+
+Stop
+
+
+PsuedoCode(Patient Age)
+
+BEGIN 
+ 
+    READ age
+    IF age < 13
+    WRITE "Patient is a Child"
+    IF ELSE age >=13 AND age < 20
+    WRITE "Patient is a Teenager"
+    ELSE
+    WRITE "Patient is an Adult"
+
+END
+-----------------------------------------------------------------------------
+
+1.4
+
+Start
+
+Declare the variable 'color'
+
+Accepts the value of 'color'
+
+If the color is 'red;
+
+Display Stop
+
+Else
+
+  Check if color is 'yellow'
+
+   Display Ready
+
+   Else
+
+       Check if color is 'green'
+
+       Display Go
+
+       Else 
+
+       Display Not a valid color
+
+Stop
+
+
+PseudoCode(Traffic)
+
+BEGIN
+
+    READ color
+    IF color = red
+    WRITE "STOP"
+    ELSE IF color = yellow
+    WRITE "READY"
+    ELSE IF color = green
+    WRITE "GO"
+    ELSE
+    WRITE "color is not valid"    
+
+END
+---------------------------------------------------------------
+
+1.5
+
+Start
+
+Declare a variable 'year' and 'leap'
+
+Accept the value of year and and mod it with 4 and store the result in leap
+
+If the leap is equal to 0 
+
+Display It is a leap year
+
+Else
+
+Display It is a non leap year
+
+Stop  
+
+PsuedoCode (Leap Year)
+
+BEGIN
+
+    READ year and leap
+    leap = yeaer % 4
+    IF leap == 0
+    WRITE "It is a leap year"
+    ELSE
+    WRITE "It is not a leap year" 
+    
+END
+
+-------------------------------------------------------------------
+
+1.6
+
+START
+
+step1: Declare num1,num2 and operation
+step2: Accept the value of num1, num2 and operation
+step3: If operation is equal to "add" Display num1 + num2
+step4: Else If operation is equal to "subtract" Display num2 - num1
+step5: Else If operation is equal to "multiply" Display num1 * num2
+step6: Else Display num2 / num1
+
+STOP
+
+PsuedoCode (Calculator)
+
+BEGIN 
+    READ num1, num2 and operation
+    IF operation == "add"
+    WRITE "num1 + num2"
+    ELSE IF operation == "subtract"
+    WRITE "num2 - num1"
+    ELSE IF operation == "multiply"
+    WRITE "num1 * num2"
+    ELSE
+    WRITE "num2 / num1"    
+END
+ 
+
+-------------------------------------------------------------------
+
+
+PseudoCode (factorial)
+
+BEGIN
+     READ num
+     fact = 1
+     count = 1
+               WHILE count < num
+                    COMPUTE fact = fact * count
+                    count = count + 1
+               ENDWHILE
+          PRINT fact
+END

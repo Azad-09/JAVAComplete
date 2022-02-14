@@ -1,0 +1,295 @@
+package com.niit.validatestring;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+public class ValidateStringTest {
+    ValidateString validateString=null;
+    @BeforeAll
+    static void init() {
+        System.out.println("init");
+       // validateString = new ValidateString();
+    }
+ @AfterAll
+  static void destroy() {
+        System.out.println("after - destroy");
+       // validateString = new ValidateString();
+    }
+    @BeforeEach
+    void setUp() {
+        System.out.println("setup");
+        validateString = new ValidateString();
+    }
+    @AfterEach
+    void tearDown() {
+         System.out.println("cleaning up resources");
+        validateString = null;
+    }
+    @Test
+    public void givenAStringThenReturnValidatedResult1() {
+         System.out.println("in tc1");
+      validateString.validatePassword("hi");
+    }
+     @Test
+    public void givenAStringThenReturnValidatedResult2() {
+        System.out.println("in tc2");
+      validateString.validatePassword("hello");
+    }
+@Test
+    public void validateArrayTest(){
+             String str2[]={"apple","banana","jack"};
+             String str1[]= validateString.validateArray();
+             assertArrayEquals(str2,str1);
+    }
+}
+white_check_mark
+eyes
+raised_hands
+
+
+
+
+
+3:46
+public class ValidateString {
+    // Function to validate username based on the specified rules
+    public boolean validatePassword(String str) {
+        return false;
+    }
+        public String[] validateArray() {
+        String str2[]={"apple","banana","jack"};
+        return str2;
+    }
+}
+3:46
+JUNIT:
+=======
+unit testing framework for a java ecosystem
+unit testing -> is a way of testing a unit or piece of code that can logically isolated in the system
+	withdraw() in a ATM application
+Framework :  helps us to focus on high level functionality rather than low level functionality of the application.
+running a java program
+ATM application - withdraw,deposit, check balance....
+TDD:  Test driven development
+one of the software development process focusing on Test-first development ? is it possible
+general traditional process - create application and then test
+testing first write logic second
+in this approach initially the test cases which we write always fails, and  thing here is we try to make the
+test case pass by developing it.
+Register - TestScenario / test Suite
+	
+	email		-
+			TC_001 - valid email - @ , com etc
+	
+	mobilenumb
+			TC_002,3,4,5 - valid maob - 10 min, only numbers,no spl char, india shud start from 6,7,8,9
+	pass /otp
+			TC0006
+gmail login - TestScenario
+	name txt
+	pass txt
+	
+Test cases:
+	enter valid name and pass
+	enter valid name and invalid pass
+	enter invalid name and pass
+	enter invalid name and valid pass
+	I  	 P	   O
+	u
+	P   login check   error msg
+hamcrest-core-1.3.jar - running test cases
+junit4.13.2.jar - lib
+download the above jar
+create a folder by right clicking application name and name the folder as "lib"
+paste the jar files into that folder
+select both jar and right click and choose builkt path option and select "add to Builtpath"
+now it becomes the part of application
+1 db - retrieving val and display
+@BeforeClass
+create a db obj
+@Test
+execute the code to retrieve
+@Test
+execute the code to retrieve
+@AfterClass
+close th db obj
+3 db - retrieving val and display
+@BeforeClass
+create a db1 obj
+create a db2 obj
+create a db3 obj
+@Test
+execute the code to retrieve- db1
+@Test
+execute the code to retrieve - db1
+@Test
+execute the code to retrieve- db2
+@Test
+execute the code to retrieve- db2
+@Test
+execute the code to retrieve- db3
+@Test
+execute the code to retrieve- db3
+@AfterClass
+close th db1 obj
+close th db2 obj
+close th db3 obj
+3:46
+wastage or leakage of memory
+3:46
+package com.niit;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Test;
+public class StudentTest2 {
+	boolean status=false;
+	
+	@BeforeClass //junit BeforeAll
+	public static  void init(){
+		System.out.println("in init");
+	}
+	@Before //junit5 BeforeEach
+	public  void initForTestCase(){
+		System.out.println("in init for test case");
+	}
+	
+	@Test
+	public void testCheckMajor1(){
+		System.out.println("in tcm1");
+	status=Student.checkMajor(-22);
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertTrue(status);
+	//	assertArrayEquals(null,null);
+		
+	}
+	@Test
+	public void testCheckMajor2(){
+		System.out.println("in tcm2");
+		status=Student.checkMajor(22);
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertTrue(status);
+		
+	}
+	@Test
+	public void testCheckMajor3(){
+		System.out.println("in tcm3");
+		status=Student.checkMajor(2);
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertTrue(status);
+		
+	}
+	@AfterClass //junit AfterAll
+	public static  void release(){
+		System.out.println("in release");
+	}
+	@After //junit5 AfterEach
+	public  void closeAftereachTestCase(){
+		System.out.println("after each case");
+	}
+}
+3:47
+package com.niit;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import org.junit.Ignore;
+import org.junit.Test;
+public class StudentTest {
+	//all classes containing test case must be public
+	//all the test cases must be void
+	//never pass inputs to the test case
+	//no use of sop is advisable
+	@Test
+	//@Ignore //in junit 5 - @Disabled
+	public void testdisplayFullNameValid(){
+		
+		String name=Student.displayFullName("arun","kumar");
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertEquals( "Mr./ Mrs. arun kumar", name);
+	}
+	
+	@Test
+	//@Ignore
+	public void testdisplayFullNameInvalid(){
+		
+		String name=Student.displayFullName("Arun","kumar");
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertEquals( "Mr./ Mrs. arun kumar", name);
+	}
+	@Test
+	@Ignore
+	public void testCheckMajor(){
+		
+		boolean status=Student.checkMajor(22);
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertTrue(status);
+		
+	}
+	@Test
+	public void testCheckMinorMajorPositive(){
+		
+		String status=Student.checkMinorMajor(22);
+		//System.out.println(status); - not recommended
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertEquals("major",status);
+	//	assertEquals("minor",status);
+	}
+	@Test
+	public void testCheckMinorMajorNegative(){
+		
+		String status=Student.checkMinorMajor(15);
+		//actual is Arun kumar
+		// expected is arun kumar
+		assertEquals("minor",status);
+	//	assertEquals("minor",status);
+	}
+}
+3:47
+package com.niit;
+public class Student {
+	static String displayFullName(String fn,String lastName)
+	{		
+	return "Mr./ Mrs. "+fn+" "+lastName;		
+	}
+	
+	static boolean checkMajor(int age){
+		
+		if(age>=18)
+				return true;
+				else
+					return false;
+	}
+	static String checkMinorMajor(int age){
+		
+		if(age>=18)
+				return "major";
+				else
+					return "minor";
+		
+	//	i-p = age - 19
+	// i-p = -89
+	// i-p "hfghg"
+	//i-p =9
+		
+		
+	}
+}
+//
+// input -  arun , kumar
+// process
+// expected out = Mr./ Mrs. arun kumar

@@ -1,0 +1,168 @@
+/super-sub
+//base - derived
+//parent - child
+class Calculator{
+	//private
+	public void add(){
+		//cannot inherit
+		System.out.println("in addition");
+	}
+	public void sub(){
+		System.out.println("in subraction");
+	}
+	public void div(){
+		System.out.println("in division");
+	}
+	public void mul(){
+		System.out.println("in multiplication");
+	}
+}
+class ScientificCalculator extends Calculator
+{
+	//copy(reference) of add(), sub(), mul(),div()	
+	public void sin(){
+		System.out.println("in sin fn");
+	}
+	public void cos(){
+		System.out.println("in cos fn");
+	}
+	public void sec(){
+		System.out.println("in sec fn");
+	}
+}
+class TestInheritance{
+	public static void main(String st[]){
+	ScientificCalculator sc=new ScientificCalculator();//can use all var and methods of base class
+	// except private methods in base
+	sc.add();
+	sc.sub();
+	sc.mul();
+	sc.sin();
+	sc.cos();
+	Calculator c1=new Calculator();	//base class reference (calculator c1;) or if its base obj (cal c=new cal())
+	//cannot access the specialization methods of sub class or unique methods at any cost
+	c1.add();
+	c1.sub();
+	c1.sin();
+	c1.sec();
+	}
+}
+
+kathiresan  6:16 PM
+Primate /Ramapithecus
+	sleep(){}
+	jump(){}
+	walk(){
+	sop("uses 2 legs and 2 hands");
+	}
+	
+Apes extends Primate
+	
+	
+Monkey extends Primate
+	
+Human extends Primate
+{
+	think(){}
+	talk(){}
+}
+	
+Tv, Radio, DVDPlayer, choose best base class for it, and implement inheritance with  atleast 1 common function and 1 specialized fiu=n in sub class
+6:18
+head first java pdf
+6:18
+programmiz
+
+kathiresan  6:43 PM
+Relationship:
+	Car __is a_ Vehicle
+	Tempo __is a_ Vehicle
+	Flight __is a type of_ Vehicle
+	Admin__is a type of_ Employee
+	Circle is a type of Shape
+1. inheritance - "is A"
+2. Association - "Has A"
+	Aggregation
+	Composition - part of , restricted form of aggregation
+	
+	Car has a Engine		- tightly coupled - composition
+	College has a student		- Aggregation
+	Organization has a Employee	- Aggregation
+	Employee has a Address		- Aggregation
+	Books has a page		- tightly coupled - composition
+	Human has a Heart		- tightly coupled- composition
+Employee has a Address
+	Employee - whole
+	Address - part
+3. depandance - "Uses  A"
+	Writer uses a pen
+	user Uses laptop
+1. inheritance - "is A" :
+	Reusabilty of the code with out the need of rewriting it
+types of inheritance:
+	1. single inheritance
+	2. multiple  - is supported by interface
+	3. multi-level
+		GF -> F ->Son
+	4. hybrid
+	5. hierachial
+class Calculator{
+	public void add(){}
+	public void sub(){}
+	public void div(){}
+	public void mul(){}
+}
+this calc is very basic in nature as my requirement was based scientific calculations  sin(), cos, cosec,sec(),log()
+so we prefer  to modify or recreate in a new class
+class Calculator{
+	public void add(){}
+	public void sub(){}
+	public void div(){}
+	public void mul(){}
+	public void sin(){}
+	public void cos(){}
+	public void sec(){}
+}
+ next step: change the name of class as it is ambigious
+class ScientificCalculator{
+	public void add(){}
+	public void sub(){}
+	public void div(){}
+	public void mul(){}
+	public void sin(){}
+	public void cos(){}
+	public void sec(){}
+}
+next step -> some behaviours are repeated in sci calc, so to remove them here we are going to treat Calculator as existing prototype
+and sci cal as enhanced version of Calc
+class ScientificCalculator{
+	
+	public void sin(){}
+	public void cos(){}
+	public void sec(){}
+}
+next step : sci calc will not be able to add or sub etc, the nhow do u get fewatures of calc?
+class ScientificCalculator is a Calculator //here isa can be replaced by java tech keyword called extends
+{
+	
+	public void sin(){}
+	public void cos(){}
+	public void sec(){}
+}
+so it becomes
+class ScientificCalculator extends Calculator
+{
+	
+	public void sin(){}
+	public void cos(){}
+	public void sec(){}
+}
+class TestCode{
+	public static void main(String st[]){
+	ScientificCalculator sc=new ScientificCalculator();
+	sc.add();
+	sc.sub();
+	sc.mul();
+		
+	}
+}

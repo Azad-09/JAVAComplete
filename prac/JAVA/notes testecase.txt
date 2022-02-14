@@ -1,0 +1,8 @@
+framework = is a softeware which help to build high level functionality software we dont have to care about low level functionality as it is taken care by framework only
+library = collection of precomipled routines or programme 
+
+TDD = test driven development
+
+one of the software dvelopment process fo
+
+test suite = collection of test cases

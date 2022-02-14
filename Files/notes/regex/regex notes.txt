@@ -1,0 +1,104 @@
+String url = www.niit.com
+
+user 1-> String url=https://www.niit.com/india/training/school/school-management-software#title76
+user 2-> www.niit
+
+Strongly typed
+loosely typed
+
+in JS
+
+var s=90;
+d="hello"
+
+//delimiters - . , / : - .... or word
+String days="";
+
+String lines[]=split(".");
+
+
+
+char data[]=toCharArray();
+
+Regex, short for REGular EXpression
+
+a pattern matching system.
+
+pattern matching or extracting useful information from large texts in an efficient way.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Used widely in:
+
+* Search Engine Optimisation
+* Web analytics
+* Digital marketing
+* HR Management
+
+invented by Stephen Cole Kleene in 1951
+1968, Ken Thompson - used in QED Text editor
+later used in Unix - grep, lex...
+
+
+
+
+"*.txt" ---> pattern ----->Pattern class
+Matcher searches in the OS file system
+
+
+import java.util.regex.*;
+
+
+
+
+
+
+
+Practical use cases:
+
+1. Detect typos -misspelt words that you should be aiming to include 'celphone', 'lollipop', 'androide' etc
+2. Detect incorrect capitalisation - AB+ve instead ab+
+3. Detect missing trademark/copyright mark
+4. Extract metadata - web crawling
+
+
+Email validation :
+^[^@ ]+@[^@ ]+\.[^@ \.]{2,}$
+password validation
+(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[!@#$*])
+Valid date format:
+\d{4}-\d{2}-\d{2}
+Phone number validation:
+^[\\(]\d{3}[\\)]\s\d{3}-\d{4}$
+Credit card number Validation:
+^4[0–9]{12}(?:[0–9]{3})?$ -visa
+^3[47][0–9]{13}$ - amex
+^(?:5[1–5][0–9]{2}|222[1–9]|22[3–9][0–9]|2[3–6][0–9]{2}|27[01][0–9]|2720)[0–9]{12}$ - Mastercard
+
+import java.util.regex.*;
+
+pattern.matcher - test if the string contains-a pattern
+pattern.matches - test if the string is-a pattern
+
+
+
+https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/find

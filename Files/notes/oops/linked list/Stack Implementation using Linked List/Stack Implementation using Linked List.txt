@@ -1,0 +1,181 @@
+Journey.java
+=============
+
+public class Journey {
+	String sourceAddr;
+	String destinationAddr;
+	int distance;
+	int fare;
+	
+	public String toString()
+	{
+		return "Source :"+sourceAddr+" Destination:"+destinationAddr+" Distance:"+distance+" Fare:"+fare+"\n";
+	}
+	
+	public Journey() {}
+	
+	public Journey(String sAddr,String dAddr,int distance,int fare) {
+		this.sourceAddr=sAddr;
+		this.destinationAddr=dAddr;
+		this.distance=distance;
+		this.fare=fare;
+	}
+
+	public String getSourceAddr() {
+		return sourceAddr;
+	}
+
+	public void setSourceAddr(String sourceAddr) {
+		this.sourceAddr = sourceAddr;
+	}
+
+	public String getDestinationAddr() {
+		return destinationAddr;
+	}
+
+	public void setDestinationAddr(String destinationAddr) {
+		this.destinationAddr = destinationAddr;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
+	}
+
+	public int getFare() {
+		return fare;
+	}
+
+	public void setFare(int fare) {
+		this.fare = fare;
+	}
+
+}
+
+Node.java
+===========
+
+public class Node 
+{
+	//data Part
+	Journey journey;
+	
+	//Link Part
+	Node link;
+	
+	public Node(Journey journey)
+	{
+		this.journey=journey;
+		link=null;
+	}
+	
+	public Journey getJourney()
+	{
+		return journey;
+	}
+}
+
+Stack.java
+=============
+
+public class Stack {
+	
+	Node top;
+	
+	public Stack()
+	{
+		top=null;
+	}
+	
+	public void push(Journey journey)
+	{
+		Node newNode=new Node(journey);
+		
+		if(top==null)
+		{
+			System.out.println("Stack is Empty");
+			top=newNode;
+		}
+		else
+		{
+			newNode.link=top;
+			top=newNode;
+		}
+	}
+	
+	public void pop()
+	{
+		Node temp;
+		if(top==null)
+		{
+			System.out.println("Stack is Empty");
+			return;
+		}
+		temp=top;
+		top=top.link;
+		System.out.println("The Element Poped Out:"+temp.getJourney());
+		temp=null;
+	}
+
+	public void displayStack()
+	{
+		for(Node temp=top;temp!=null;temp=temp.link)
+		{
+			System.out.println(temp.getJourney());
+		}
+	}
+}
+
+StackImpl.java
+================
+
+public class StackImpl 
+{
+	public static void main(String arg[]) {
+		
+		Stack stackObj=new Stack();
+		
+		stackObj.push(new Journey("Mumbai","Delhi",1000,2500));
+		stackObj.push(new Journey("Kolkata","Chennai",1600,3500));
+		stackObj.push(new Journey("Banglore","Pune",800,2000));
+		stackObj.push(new Journey("Ghaziabad","Lucknow",500,1500));
+		
+		
+		stackObj.displayStack();
+		
+		stackObj.pop();
+		
+		stackObj.displayStack();
+	}
+}
+
+Sorting Linked List
+===================
+public void sort()
+	{
+		Node temp1,temp2;
+		int temp;
+		
+		temp1=START;
+		
+		while(temp1!=null)
+		{
+			temp2=temp1.link;
+			
+			while(temp2!=null)
+			{
+				if(temp1.getData()>temp2.getData())
+				{
+					temp=temp1.getData();
+					temp1.setData(temp2.getData());
+					temp2.setData(temp);
+				}
+				temp2=temp2.link;
+			}
+			
+			temp1=temp1.link;
+		}
+	}
